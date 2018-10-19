@@ -1,0 +1,15 @@
+En esta carpeta se guardarán los scripts POR SEPARADO de:
+- Tablas
+- Procedimientos Almacenados
+- Funciones
+- Inserciones de Datos (Datos de prueba)
+- Vistas (Si hubieran)
+
+Esto es para tener todos la misma estrucura de BD actualizada.
+
+
+** Dejar aquí sus usuarios y contraseñas de MySql:
+
+-Eduardo Navarrete
+    user: root
+    pass: 1234

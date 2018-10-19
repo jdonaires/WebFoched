@@ -3,16 +3,19 @@ class DBAccess
 {
   private $conn;
   private $host = "localhost";
-  private $dbname = "cuestionario";
+  private $dbname = "BD_WebFoched";
   private $user = "root";
-  private $pass = "admin";
-  
+  private $pass = "1234";
+
   public function __CONSTRUCT()
   {
-    try {
-      $this->conn = new PDO('mysql:host='.$host.';dbname='.$dbname, $user, $pass);
+    try
+    {      
+      $this->conn = new PDO('mysql:host='.$this->host.';dbname='.$this->dbname, $this->user, $this->pass);
 			$this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch (PDOException $e ) {
+    }
+    catch (PDOException $e )
+    {
       echo "error:" .$e->getMessage();
     }
  }
