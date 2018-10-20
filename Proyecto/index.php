@@ -1,5 +1,5 @@
 <?php
 ?>
 <html>
-<a href="DESIGNER/frmPersona.php">Persona</a>
+<a href="DESIGNER/inicio.php">web</a>
 </html>
