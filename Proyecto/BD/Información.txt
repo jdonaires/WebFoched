@@ -1,4 +1,4 @@
-En esta carpeta se guardarán los scripts POR SEPARADO de:
+﻿En esta carpeta se guardarán los scripts POR SEPARADO de:
 - Tablas
 - Procedimientos Almacenados
 - Funciones
@@ -13,3 +13,6 @@ Esto es para tener todos la misma estrucura de BD actualizada.
 -Eduardo Navarrete
     user: root
     pass: 1234
+-Ever Nestarez
+    user: root
+    pass: 
