@@ -1,24 +1,24 @@
 <?php
-require_once('../BOL/usuarioBOL.php');
-require_once('../DAO/regUserDAO.php');
+require_once('../BOL/Usuario.php');
+require_once('../DAO/UsuarioDAO.php');
 
 $user = new Usuario();
-$regDAO = new RegistrarDAO();
+$userDAO = new UsuarioDAO();
 
 if(isset($_POST['RegistrarUsuario']))
 {
-	$user->__SET('usuario',              $_POST['usuario']);
-    $user->__SET('pass',                 $_POST['pass']);
-    $user->__SET('correo',               $_POST['correo']);
+		$user->__SET('Usuario', $_POST['usuario']);
+    $user->__SET('Pass', $_POST['pass']);
+    $user->__SET('Correo', $_POST['correo']);
 
-	$regDAO->Registrar($user);
+	$userDAO->Registrar($user);
 	header('Location: frmLogin.php');
 }
 
-?> 
-<!DOCTYPE html> 
-<html lang="es"> 
-    <head> 
+?>
+<!DOCTYPE html>
+<html lang="es">
+    <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -28,7 +28,7 @@ if(isset($_POST['RegistrarUsuario']))
 
         <link href="CSS/Style.css" rel="stylesheet">
 
-    </head>     
+    </head>
     <body>
 
         <div class="container">
@@ -53,7 +53,7 @@ if(isset($_POST['RegistrarUsuario']))
                     </tr>
                     <div class="espacio"> </div>
                     <td colspan="2">
-                        <button type="submit" name="LoginUsuario" class="buttonForm">Iniciar sesión</button>   
+                        <button type="submit" name="LoginUsuario" class="buttonForm">Iniciar sesión</button>
                     </td>
                 </form>
             </div>
@@ -72,14 +72,14 @@ if(isset($_POST['RegistrarUsuario']))
                     </tr>
                     <div class="espacio"> </div>
                     <td colspan="2">
-                        <button type="submit" name="RegistrarUsuario" class="buttonForm">Registrarse</button>   
+                        <button type="submit" name="RegistrarUsuario" class="buttonForm">Registrarse</button>
                     </td>
                 </form>
             </div>
         </center>
 
         </div>
-        
+
         <script>
             function openCity(evt, cityName) {
                 var i, tabcontent, tablinks;
@@ -96,5 +96,5 @@ if(isset($_POST['RegistrarUsuario']))
             }
         </script>
 
-    </body>     
+    </body>
 </html>

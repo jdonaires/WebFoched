@@ -1,7 +1,7 @@
 <?php
 require_once('../DAL/DBAccess.php');
 
-class RegistrarDAO
+class UsuarioDAO
 {
 	private $pdo;
 
@@ -11,14 +11,14 @@ class RegistrarDAO
 			$this->pdo = $dba->get_connection();
 	}
 
-	public function Registrar (Usuario $usuario)
+	public function Registrar(Usuario $usuario)
 	{
 		try
 		{
 		$statement = $this->pdo->prepare("CALL sp_registrar_usuario(?,?,?)");
-    $statement->bindParam(1,$usuario->__GET('usuario'));
-		$statement->bindParam(2,$usuario->__GET('pass'));
-		$statement->bindParam(3,$usuario->__GET('correo'));
+    $statement->bindParam(1,$usuario->__GET('Usuario'));
+		$statement->bindParam(2,$usuario->__GET('Pass'));
+		$statement->bindParam(3,$usuario->__GET('Correo'));
     $statement -> execute();
 
 		} catch (Exception $e)
