@@ -68,11 +68,11 @@ CREATE TABLE Ubicacion
 ,	CONSTRAINT PRIMARY KEY(Id_Ubicacion)
 ,	CONSTRAINT FOREIGN KEY(Id_Restaurante) REFERENCES Restaurante(Id_Restaurante)
 );
-
+/* Se actualiza el tipo de variable de campo Nombre   INT a VARCHAR*/
 CREATE TABLE Categoria
 (
 	Id_Categoria INT AUTO_INCREMENT NOT NULL
-,	Nombre INT NOT NULL
+,	Nombre VARCHAR NOT NULL
 ,	Descripcion VARCHAR(100) NULL
 , Usuario_Creacion VARCHAR(30) NOT NULL
 , PC_Creacion     VARCHAR(30) NOT NULL
