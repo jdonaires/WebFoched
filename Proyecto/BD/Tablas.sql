@@ -15,12 +15,12 @@ CREATE TABLE Usuario
 ,	CONSTRAINT PRIMARY KEY(Id_Usuario)
 );
 
-
+/*Actualizacion del campo RUC_DNI : Porque el RUC lleg hasta 11 digitos*/
 CREATE TABLE Restaurante
 (
 	Id_Restaurante INT AUTO_INCREMENT NOT NULL
 ,	Razon_Social VARCHAR(50) NOT NULL
-,	RUC_DNI VARCHAR(10) NOT NULL
+,	RUC_DNI VARCHAR(11) NOT NULL
 ,	Logo_Imagen MEDIUMBLOB NULL
 ,	Direccion_Red_Social VARCHAR(200) NULL
 ,	Estado TINYINT NOT NULL
