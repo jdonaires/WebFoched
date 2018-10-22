@@ -57,3 +57,31 @@ BEGIN
                                                 ,_PC,NOW());
 END$$
 DELIMITER ;
+
+
+
+/*****************************************************
+Autor: Guillen de la Cruz Antony Grover
+Descripción: Resgistrar Ubicacion
+Fecha Actualizacion: 22/10/2018
+Ejecutar: CALL sp_registrar_ubicacion('','','','','','','','','','')
+******************************************************/
+DELIMITER $$
+CREATE PROCEDURE sp_registrar_ubicacion(
+  	_Id_Restaurante INT
+  ,	_Nombres	VARCHAR(100)
+  ,	_Latitud  DECIMAL(19,17)
+  ,	_Longitud DECIMAL(20,17)
+  ,	_Referencia VARCHAR(500)
+  , _Usuario VARCHAR(30)
+  , _PC     VARCHAR(30)
+)
+BEGIN
+	INSERT INTO Ubicacion (Id_Restaurante,Nombres,Latitud
+                        ,Longitud,Referencia,Usuario_Creacion
+                        ,PC_Creacion,Fecha_Creacion)
+                          VALUES(_Id_Restaurante,_Nombres,_Latitud
+                                ,_Longitud,_Referencia,_Usuario
+                                ,_PC,NOW());
+END$$
+DELIMITER ;
