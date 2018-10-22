@@ -33,7 +33,7 @@ if(isset($_POST['guardar']))
 
                     <table style="width:500px;" border="0">
                         <tr>
-                            <th style="text-align:left;">Nombre</th>
+                            <th style="text-align:left;">Nombre</th>/*esto sirve*/
                             <td><input type="text" name="nombres" value="" style="width:100%;" /></td>
                         </tr>
                         <tr>
