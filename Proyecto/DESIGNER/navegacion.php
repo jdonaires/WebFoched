@@ -19,7 +19,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias </a>
                 <div class="dropdown-menu" aria-labelledby="dropdown01">
-                    <a class="dropdown-item" href="#">Restaurantes</a>
+                    <a class="dropdown-item" href="Restaurantes.php">Restaurantes</a>
                     <a class="dropdown-item" href="#">Pollerias</a>
                     <a class="dropdown-item" href="#">Otros</a>
                 </div>
@@ -42,4 +42,3 @@
 
 </body>
 </html>
-    

@@ -1,5 +1,10 @@
 body {
   font-family: Arial;
+  background-image:url("../IMG/bg1.png");
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  background-size: 100%;
+  background-position:50% 50%;
 }
 
 /* Style the tab */
@@ -12,7 +17,7 @@ body {
 }
 
 /* Style the buttons inside the tab */
-.tab button {
+.tab .buttonForm {
   background-color: inherit;
   float: left;
   border: none;
@@ -31,7 +36,6 @@ body {
 /* Create an active/current tablink class */
 .tab button.active {
   background-color: #1abc9c;
-
 }
 
 /* Style the tab content */
@@ -43,33 +47,38 @@ body {
 }
 
 .content-form {
-  display: none;
-  border: 1px solid #1abc9c;
+  /*display: none;
+  border: 1px solid #1abc9c;*/
   border-top: none;
 }
 
 form {
   box-sizing: border-box;
-  width: 260px;
+  width: 100%;
   box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.6);
   border-radius: 3px;
   padding-bottom: 25px;
   padding-top: 25px;
+  background-color: rgba(241, 241, 241,.90  );
+}
+
+select {
+  width: 400px;
 }
 
 input {
   margin: 40px 25px;
-  width: 200px;
+  width: 90%;
   display: block;
   border: none;
-  padding: 15px 0px;
+  padding: 15px 10px;
   border-bottom: solid 1px #1abc9c;
   -webkit-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
   transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
   background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 96%, #1abc9c 4%);
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #1abc9c 4%);
-  background-position: -200px 0;
-  background-size: 200px 100%;
+  background-position: -100% 0;
+  background-size: 2000px 100%;
   background-repeat: no-repeat;
   color: #0e6252;
   font-size: 110%;
@@ -90,7 +99,7 @@ input:valid::-webkit-input-placeholder {
   visibility: visible !important;
 }
 
-button:hover {
+.buttonForm:hover {
   -webkit-transform: translateY(-3px);
   -ms-transform: translateY(-3px);
   transform: translateY(-3px);
@@ -112,4 +121,32 @@ button:hover {
 .espacio {
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.mitad{
+  width:50%;
+  float:left;
+}
+
+
+
+@media (max-width:600px){
+  .mitad{
+    width:100%;
+    display:block;
+  }
+
+  body{
+      background-size: 600px;
+        background-position:0 50%;
+  }
+}
+
+@media (min-width:768px) and (max-width:1000px){
+  .mitad{
+    width:100%;
+    display:block;
+  }
+
+
 }

@@ -25,3 +25,45 @@ function openCity(evt, cityName) {
   Autor: Ever Néstarez Martinez
   ******************************/
 }
+
+function validarSoloNumeros(e) {
+  tecla = e.keyCode || e.which;
+
+  //Tecla de retroceso para borrar, siempre la permite
+  if (tecla == 8) {
+    return true;
+  }
+
+  // Patron de entrada, en este caso solo acepta numeros
+  patron = /[0-9]/;
+  tecla_final = String.fromCharCode(tecla);
+  return patron.test(tecla_final);
+}
+
+function validarSoloNumerosDecimales(e) {
+  tecla = e.keyCode || e.which;
+
+  //Tecla de retroceso para borrar, siempre la permite
+  if (tecla == 8) {
+    return true;
+  }
+
+  // Patron de entrada, en este caso solo acepta numeros
+  patron = /[0-9-.]/;
+  tecla_final = String.fromCharCode(tecla);
+  return patron.test(tecla_final);
+}
+
+function validarSoloLetras(e) {
+  tecla = e.keyCode || e.which;
+
+  //Tecla de retroceso para borrar, siempre la permite
+  if (tecla == 8 || tecla == 32) {
+    return true;
+  }
+
+  // Patron de entrada, en este caso solo acepta letras
+  patron = /[A-z]/;
+  tecla_final = String.fromCharCode(tecla);
+  return patron.test(tecla_final);
+}

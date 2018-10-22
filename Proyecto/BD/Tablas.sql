@@ -48,8 +48,8 @@ CREATE TABLE Ubicacion
 	Id_Ubicacion INT AUTO_INCREMENT NOT NULL
 ,	Id_Restaurante INT NOT NULL
 ,	Nombre VARCHAR(200) NOT NULL
-,	Latitud INT NULL
-,	Longitud INT NULL
+,	Latitud DECIMAL(19,17) NULL
+,	Longitud DECIMAL(20,17) NULL
 ,	Referencia VARCHAR(500) NULL
 ,	Estado TINYINT NOT NULL
 ,	CONSTRAINT PRIMARY KEY(Id_Ubicacion)
