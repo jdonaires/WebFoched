@@ -4,6 +4,9 @@ class Restaurante_Categoria
 	private $Id;
   private $Id_Restaurante;
   private $Id_Categoria;
+	private $Usuario_Creacion
+	private $PC_Creacion
+	private $Fecha_Creacion
 	private $Estado;
 
 	public function __GET($x)

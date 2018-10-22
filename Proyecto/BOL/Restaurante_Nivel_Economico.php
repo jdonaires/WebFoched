@@ -4,6 +4,9 @@ class Restaurante_Nivel_Economico
 	private $Id;
   private $Id_Restaurante;
   private $Id_Nivel;
+	private $Usuario_Creacion
+	private $PC_Creacion
+	private $Fecha_Creacion
 	private $Estado;
 
 	public function __GET($x)

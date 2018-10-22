@@ -7,6 +7,9 @@ class Ubicacion
   private $Latitud;
 	private $Longitud;
 	private $Referencia;
+	private $Usuario_Creacion
+	private $PC_Creacion
+	private $Fecha_Creacion
 	private $Estado;
 
 	public function __GET($x)
