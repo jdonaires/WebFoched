@@ -4,7 +4,7 @@ DROP DATABASE BD_WebFoched;
 CREATE DATABASE BD_WebFoched;
 
 USE BD_WebFoched;
-
+/*Como pueden observar se añadio la restricion DEFAULT al campo estado para que se genere en automatico y no ponerlo en los SP de registros*/
 CREATE TABLE Usuario
 (
 	Id_Usuario INT AUTO_INCREMENT NOT NULL
