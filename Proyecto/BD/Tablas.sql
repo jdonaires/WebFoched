@@ -150,3 +150,11 @@ CREATE TABLE Bebida
 ,	CONSTRAINT PRIMARY KEY(Id_Bebida)
 ,	CONSTRAINT FOREIGN KEY(Id_Restaurante) REFERENCES Restaurante(Id_Restaurante)
 );
+/*Se crea la tabla historial para saber las modificaciones que se realicen en las tablas*/
+CREATE TABLE Historial(
+	Id_Historia INT AUTO_INCREMENT NOT NULL
+,	Referencia_Id INT NOT NULL
+,	Usuario_Actualizo VARCHAR(30) NOT NULL
+,	Pc_Actualizo 			VARCHAR(30) NOT NULL
+,	Fecha_Actualizacion DATETIME NOT NULL
+)
