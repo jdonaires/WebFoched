@@ -13,6 +13,10 @@ CREATE TABLE Usuario
 ,	Correo VARCHAR(50) NULL
 ,	Estado TINYINT NOT NULL
 ,	CONSTRAINT PRIMARY KEY(Id_Usuario)
+, Usuario_Creacion VARCHAR(30) NOT NULL
+, PC_Creacion     VARCHAR(30) NOT NULL
+, Fecha_Creacion  DATETIME NOT NULL
+, Estado 					CHAR(1) DEFAULT 1 NOT NULL
 );
 
 /*Actualizacion del campo RUC_DNI : Porque el RUC lleg hasta 11 digitos*/
@@ -23,7 +27,10 @@ CREATE TABLE Restaurante
 ,	RUC_DNI VARCHAR(11) NOT NULL
 ,	Logo_Imagen MEDIUMBLOB NULL
 ,	Direccion_Red_Social VARCHAR(200) NULL
-,	Estado TINYINT NOT NULL
+, Usuario_Creacion VARCHAR(30) NOT NULL
+, PC_Creacion     VARCHAR(30) NOT NULL
+, Fecha_Creacion  DATETIME NOT NULL
+, Estado 					CHAR(1) DEFAULT 1 NOT NULL
 ,	CONSTRAINT PRIMARY KEY(Id_Restaurante)
 );
 
@@ -38,7 +45,10 @@ CREATE TABLE Contacto
 ,	Numero_2 VARCHAR(11) NULL
 ,	Numero_3 VARCHAR(11) NULL
 ,	Direccion_Red_Social VARCHAR(200) NULL
-,	Estado TINYINT NOT NULL
+, Usuario_Creacion VARCHAR(30) NOT NULL
+, PC_Creacion     VARCHAR(30) NOT NULL
+, Fecha_Creacion  DATETIME NOT NULL
+, Estado 					CHAR(1) DEFAULT 1 NOT NULL
 ,	CONSTRAINT PRIMARY KEY(Id_Contacto)
 ,	CONSTRAINT FOREIGN KEY(Id_Restaurante) REFERENCES Restaurante(Id_Restaurante)
 );
@@ -51,7 +61,10 @@ CREATE TABLE Ubicacion
 ,	Latitud DECIMAL(19,17) NULL
 ,	Longitud DECIMAL(20,17) NULL
 ,	Referencia VARCHAR(500) NULL
-,	Estado TINYINT NOT NULL
+, Usuario_Creacion VARCHAR(30) NOT NULL
+, PC_Creacion     VARCHAR(30) NOT NULL
+, Fecha_Creacion  DATETIME NOT NULL
+, Estado 					CHAR(1) DEFAULT 1 NOT NULL
 ,	CONSTRAINT PRIMARY KEY(Id_Ubicacion)
 ,	CONSTRAINT FOREIGN KEY(Id_Restaurante) REFERENCES Restaurante(Id_Restaurante)
 );
@@ -61,7 +74,10 @@ CREATE TABLE Categoria
 	Id_Categoria INT AUTO_INCREMENT NOT NULL
 ,	Nombre INT NOT NULL
 ,	Descripcion VARCHAR(100) NULL
-,	Estado TINYINT NOT NULL
+, Usuario_Creacion VARCHAR(30) NOT NULL
+, PC_Creacion     VARCHAR(30) NOT NULL
+, Fecha_Creacion  DATETIME NOT NULL
+, Estado 					CHAR(1) DEFAULT 1 NOT NULL
 ,	CONSTRAINT PRIMARY KEY(Id_Categoria)
 );
 
@@ -70,7 +86,10 @@ CREATE TABLE Restaurante_Categoria
 	Id INT AUTO_INCREMENT NOT NULL
 ,	Id_Restaurante INT NOT NULL
 ,	Id_Categoria INT NOT NULL
-,	Estado TINYINT NOT NULL
+, Usuario_Creacion VARCHAR(30) NOT NULL
+, PC_Creacion     VARCHAR(30) NOT NULL
+, Fecha_Creacion  DATETIME NOT NULL
+, Estado 					CHAR(1) DEFAULT 1 NOT NULL
 ,	CONSTRAINT PRIMARY KEY(Id)
 ,	CONSTRAINT FOREIGN KEY(Id_Restaurante) REFERENCES Restaurante(Id_Restaurante)
 ,	CONSTRAINT FOREIGN KEY(Id_Categoria) REFERENCES Categoria(Id_Categoria)
@@ -81,7 +100,10 @@ CREATE TABLE Nivel_Economico
 	Id_Nivel INT AUTO_INCREMENT NOT NULL
 ,	Nombre VARCHAR(30) NOT NULL
 ,	Descripcion VARCHAR(100) NULL
-,	Estado TINYINT NOT NULL
+, Usuario_Creacion VARCHAR(30) NOT NULL
+, PC_Creacion     VARCHAR(30) NOT NULL
+, Fecha_Creacion  DATETIME NOT NULL
+, Estado 					CHAR(1) DEFAULT 1 NOT NULL
 ,	CONSTRAINT PRIMARY KEY(Id_Nivel)
 );
 
@@ -90,7 +112,10 @@ CREATE TABLE Restaurante_Nivel_Economico
 	Id INT AUTO_INCREMENT NOT NULL
 ,	Id_Restaurante INT NOT NULL
 ,	Id_Nivel INT NOT NULL
-,	Estado TINYINT NOT NULL
+, Usuario_Creacion VARCHAR(30) NOT NULL
+, PC_Creacion     VARCHAR(30) NOT NULL
+, Fecha_Creacion  DATETIME NOT NULL
+, Estado 					CHAR(1) DEFAULT 1 NOT NULL
 ,	CONSTRAINT PRIMARY KEY(Id)
 ,	CONSTRAINT FOREIGN KEY(Id_Restaurante) REFERENCES Restaurante(Id_Restaurante)
 ,	CONSTRAINT FOREIGN KEY(Id_Nivel) REFERENCES Nivel_Economico(Id_Nivel)
@@ -103,7 +128,10 @@ CREATE TABLE Plato
 ,	Nombre VARCHAR(30) NOT NULL
 ,	Descripcion VARCHAR(100) NULL
 ,	Precio DECIMAL(3,2) NOT NULL
-,	Estado TINYINT NOT NULL
+, Usuario_Creacion VARCHAR(30) NOT NULL
+, PC_Creacion     VARCHAR(30) NOT NULL
+, Fecha_Creacion  DATETIME NOT NULL
+, Estado 					CHAR(1) DEFAULT 1 NOT NULL
 ,	CONSTRAINT PRIMARY KEY(Id_Plato)
 ,	CONSTRAINT FOREIGN KEY(Id_Restaurante) REFERENCES Restaurante(Id_Restaurante)
 );
@@ -115,7 +143,10 @@ CREATE TABLE Bebida
 ,	Nombre VARCHAR(30) NOT NULL
 ,	Descripcion VARCHAR(100) NULL
 ,	Precio DECIMAL(3,2) NOT NULL
-,	Estado TINYINT NOT NULL
+, Usuario_Creacion VARCHAR(30) NOT NULL
+, PC_Creacion     VARCHAR(30) NOT NULL
+, Fecha_Creacion  DATETIME NOT NULL
+, Estado 					CHAR(1) DEFAULT 1 NOT NULL
 ,	CONSTRAINT PRIMARY KEY(Id_Bebida)
 ,	CONSTRAINT FOREIGN KEY(Id_Restaurante) REFERENCES Restaurante(Id_Restaurante)
 );
