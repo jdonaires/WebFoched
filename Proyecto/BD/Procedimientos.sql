@@ -16,6 +16,6 @@ CREATE PROCEDURE sp_registrar_usuario(
 )
 BEGIN
 /*Esta es la respuesta de porque el campo default para no agregar EL CAMPO ESTADO en el SP*/
-	INSERT INTO Usuario (usuario,pass,correo,Usuario_Creacion,PC_Creacion) VALUES(_usuario,_pass,_correo,_usuario,_PC);
+	INSERT INTO Usuario (usuario,pass,correo,Usuario_Creacion,PC_Creacion,Fecha_Creacion) VALUES(_usuario,_pass,_correo,_usuario,_PC,NOW());
 END$$
 DELIMITER ;
