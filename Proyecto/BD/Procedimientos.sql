@@ -10,9 +10,12 @@ DELIMITER $$
 CREATE PROCEDURE sp_registrar_usuario(
 	_usuario 	VARCHAR(20),
 	_pass 		VARCHAR(20),
-	_correo 	VARCHAR(25)
+	_correo 	VARCHAR(25),
+	_usuario  VARCHAR(30),
+	_PC				VARCHAR(30),
 )
 BEGIN
-	INSERT INTO Usuario (usuario,pass,correo,estado) VALUES(_usuario,_pass,_correo,1);
+/*Esta es la respuesta de porque el campo default para no agregar EL CAMPO ESTADO en el SP*/
+	INSERT INTO Usuario (usuario,pass,correo,Usuario_Creacion,PC_Creacion) VALUES(_usuario,_pass,_correo,_usuario,_PC);
 END$$
 DELIMITER ;
