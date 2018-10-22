@@ -10,6 +10,9 @@ class Contacto
 	private $Numero_2;
   private $Numero_3;
   private $Direccion_Red_Social;
+	private $Usuario_Creacion
+	private $PC_Creacion
+	private $Fecha_Creacion
 	private $Estado;
 
 	public function __GET($x)
