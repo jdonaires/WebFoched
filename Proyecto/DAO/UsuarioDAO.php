@@ -16,10 +16,12 @@ class UsuarioDAO
 		try
 		{
 		$statement = $this->pdo->prepare("CALL sp_registrar_usuario(?,?,?)");
-    $statement->bindParam(1,$usuario->__GET('Usuario'));
+    	$statement->bindParam(1,$usuario->__GET('Usuario'));
 		$statement->bindParam(2,$usuario->__GET('Pass'));
 		$statement->bindParam(3,$usuario->__GET('Correo'));
-    $statement -> execute();
+		$statement -> execute();
+		
+		
 
 		} catch (Exception $e)
 		{

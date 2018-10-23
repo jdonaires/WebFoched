@@ -1,16 +1,20 @@
 <?php
 require_once('../BOL/Usuario.php');
 require_once('../DAO/UsuarioDAO.php');
+try {
 $user = new Usuario();
 $userDAO = new UsuarioDAO();
-
+	
 if(isset($_POST['RegistrarUsuario']))
-{
+	{
 	$user->__SET('Usuario', $_POST['usuario']);
     $user->__SET('Pass', $_POST['pass']);
-    $user->__SET('Correo', $_POST['correo']);
+    $user->__SET('Correo', $_POST['corre']);
 	$userDAO->Registrar($user);
 	header('Location: frmLogin.php');
+	}
+} catch (Exception $e){
+	die($e->getMessage());
 }
 ?>
 <!DOCTYPE html>
