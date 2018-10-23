@@ -11,9 +11,11 @@ CREATE TABLE Usuario
 ,	Usuario VARCHAR(20) NOT NULL
 ,	Pass VARCHAR(200) NOT NULL
 ,	Correo VARCHAR(50) NOT NULL
-,	CONSTRAINT PRIMARY KEY(Id_Usuario)
 , 	Fecha_Creacion  DATETIME NOT NULL
 , 	Estado 		CHAR(1) DEFAULT 1 NOT NULL
+,	CONSTRAINT PRIMARY KEY(Id_Usuario)
+,	CONSTRAINT uni_correo UNIQUE (Correo)
+,	CONSTRAINT ck_estado_usuario CHECK (Estado IN ('0','1'))
 );
 
 /*Actualizacion del campo RUC_DNI : Porque el RUC lleg hasta 11 digitos*/
