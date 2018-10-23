@@ -5,7 +5,7 @@ class DBAccess
   private $host = "localhost";
   private $dbname = "BD_WebFoched";
   private $user = "root";
-  private $pass = "1234";
+  private $pass = "";
 
   public function __CONSTRUCT()
   {
