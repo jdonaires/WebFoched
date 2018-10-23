@@ -5,8 +5,6 @@ class Usuario
 	private $Usuario;
 	private $Pass;
 	private $Correo;
-	private $Usuario_Creacion;
-	private $PC_Creacion;
 	private $Fecha_Creacion;
 	private $Estado;
 
