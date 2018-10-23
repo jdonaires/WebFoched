@@ -4,16 +4,21 @@ require_once('../DAO/UsuarioDAO.php');
 
 $user = new Usuario();
 $userDAO = new UsuarioDAO();
+
 	
 if(isset($_POST['RegistrarUsuario']))
 {
-	$user->__SET('Usuario', $_POST['usuario']);
-    $user->__SET('Pass', $_POST['pass']);
-    $user->__SET('Correo', $_POST['correo']);
-	$userDAO->Registrar($user);
-	header('Location: frmLogin.php');
-}
+	$var_usuario 	= $_POST["usuario"];
+	$var_pass 		= $_POST["pass"];
+	$var_correo 	= $_POST["correo"];
 
+	$user->__SET('Usuario', $var_usuario);
+    $user->__SET('Pass', 	$var_pass);
+    $user->__SET('Correo', 	$var_correo);
+	$userDAO->Registrar($user);
+
+	//header('Location: frmLogin.php'); 
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -26,6 +31,9 @@ if(isset($_POST['RegistrarUsuario']))
         <title>Login</title>
 
         <link href="CSS/Style.css" rel="stylesheet">
+
+		<script src="JS/sweetalert.min.js"></script>
+    	<link href="CSS/sweetalert.css" rel="stylesheet" type="text/css"/>	
 
     </head>
     <body>

@@ -16,12 +16,15 @@ class UsuarioDAO
 		try
 		{
 		$statement = $this->pdo->prepare("CALL sp_registrar_usuario(?,?,?)");
-    	$statement->bindParam(1,$usuario->__GET('Usuario'));
-		$statement->bindParam(2,$usuario->__GET('Pass'));
-		$statement->bindParam(3,$usuario->__GET('Correo'));
+    	$statement->bindValue(1,$usuario->__GET('Usuario')	,PDO::PARAM_STR);
+		$statement->bindValue(2,$usuario->__GET('Pass')		,PDO::PARAM_STR);
+		$statement->bindValue(3,$usuario->__GET('Correo')	,PDO::PARAM_STR);
 		$statement -> execute();
 		
-		
+		echo'<script type="text/javascript">
+    	alert("Registro Completado.");
+    	window.location.href="frmLogin.php";
+    	</script>';
 
 		} catch (Exception $e)
 		{
