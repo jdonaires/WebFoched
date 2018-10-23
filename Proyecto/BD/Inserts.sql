@@ -96,7 +96,6 @@ Ejecutar: CALL sp_registrar_categoria('','','','','','','','','','')
 ******************************************************/
 DELIMITER $$
 CREATE PROCEDURE sp_registrar_categoria(
-  _Id_Categoria INT
 ,	_Nombre INT
 ,	_Descripcion VARCHAR(100)
 , _Usuario VARCHAR(30)
@@ -105,7 +104,7 @@ CREATE PROCEDURE sp_registrar_categoria(
 BEGIN
 	INSERT INTO Ubicacion (Nombre,Descripcion,Usuario_Creacion
                         ,PC_Creacion,Fecha_Creacion)
-                          VALUES(_Id_Categoria,_Nombres,_Descripcion
+                          VALUES(_Nombres,_Descripcion
                                 ,_Usuario,_PC,NOW());
 END$$
 DELIMITER ;
@@ -117,20 +116,20 @@ DELIMITER ;
 Autor: Guillen de la Cruz Antony Grover
 Descripción: Resgistrar Ubicacion
 Fecha Actualizacion: 22/10/2018
-Ejecutar: CALL sp_registrar_categoria('','','','','','','','','','')
+Ejecutar: CALL sp_restaurante_categoria('','','','','','','','','','')
 ******************************************************/
 DELIMITER $$
-CREATE PROCEDURE sp_registrar_categoria(
-  _Id_Categoria INT
-,	_Nombre INT
-,	_Descripcion VARCHAR(100)
-, _Usuario VARCHAR(30)
-, _PC     VARCHAR(30)
+CREATE PROCEDURE sp_restaurante_categoria(
+  ,	_Id_Restaurante INT
+  ,	_Id_Categoria INT
+  , _Usuario VARCHAR(30)
+  , _PC     VARCHAR(30)
 )
 BEGIN
-	INSERT INTO Categoria (Nombre,Descripcion,Usuario_Creacion
-                        ,PC_Creacion,Fecha_Creacion)
-                          VALUES(_Id_Categoria,_Nombres,_Descripcion
-                                ,_Usuario,_PC,NOW());
+	INSERT INTO Restaurante_Categoria (Id_Restaurante,Id_Categoria
+                                    ,Usuario_Creacion,PC_Creacion
+                                    ,Fecha_Creacion)
+                                      VALUES(_Id_Restaurante,_Id_Categoria
+                                      ,_Usuario,_PC,NOW());
 END$$
 DELIMITER ;
