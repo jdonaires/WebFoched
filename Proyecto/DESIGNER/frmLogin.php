@@ -5,7 +5,7 @@ $user = new Usuario();
 $userDAO = new UsuarioDAO();
 if(isset($_POST['RegistrarUsuario']))
 {
-		$user->__SET('Usuario', $_POST['usuario']);
+	$user->__SET('Usuario', $_POST['usuario']);
     $user->__SET('Pass', $_POST['pass']);
     $user->__SET('Correo', $_POST['correo']);
 	$userDAO->Registrar($user);
