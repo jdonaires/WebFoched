@@ -14,25 +14,28 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav text-md-center nav-justified w-100">
             <li class="nav-item active">
-                <a class="nav-link" href="inicio.php">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="inicio.php">Inicio<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Nosotros</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias </a>
                 <div class="dropdown-menu" aria-labelledby="dropdown01">
                     <a class="dropdown-item" href="Restaurantes.php">Restaurantes</a>
                     <a class="dropdown-item" href="#">Pollerias</a>
+                    <a class="dropdown-item" href="#">Chifas</a>
+                    <a class="dropdown-item" href="#">Postrerìa</a>
                     <a class="dropdown-item" href="#">Otros</a>
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Services</a>
+                <a class="nav-link" href="#">Contactanos</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="frmLogin.php">Login</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-            </li>
+
         </ul>
     </div>
 </nav>
