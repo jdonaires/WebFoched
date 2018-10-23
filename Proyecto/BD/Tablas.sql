@@ -12,8 +12,6 @@ CREATE TABLE Usuario
 ,	Pass VARCHAR(200) NOT NULL
 ,	Correo VARCHAR(50) NULL
 ,	CONSTRAINT PRIMARY KEY(Id_Usuario)
-, 	Usuario_Creacion VARCHAR(30) NOT NULL
-, 	PC_Creacion     VARCHAR(30) NOT NULL
 , 	Fecha_Creacion  DATETIME NOT NULL
 , 	Estado 		CHAR(1) DEFAULT 1 NOT NULL
 );
