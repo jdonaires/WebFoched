@@ -3,6 +3,7 @@ require_once('../BOL/Usuario.php');
 require_once('../DAO/UsuarioDAO.php');
 $user = new Usuario();
 $userDAO = new UsuarioDAO();
+
 if(isset($_POST['RegistrarUsuario']))
 {
 	$user->__SET('Usuario', $_POST['usuario']);
