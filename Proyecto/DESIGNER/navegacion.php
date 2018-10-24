@@ -45,10 +45,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Contactanos</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="frmLogin.php">Login</a>
-            </li>
-
+            
         </ul>
     </div>
 </nav>
