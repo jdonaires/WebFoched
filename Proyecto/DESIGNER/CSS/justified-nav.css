@@ -30,6 +30,14 @@ body {
 .social>li>a{
   padding-right: 10px;
 }
+.session{
+  list-style-type: none;
+  display: inline-block;
+  padding-left: 800px;
+}
+.session>li{
+  float: left;
+}
 
 .navbar {
     background-image: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7),to(#eee));
