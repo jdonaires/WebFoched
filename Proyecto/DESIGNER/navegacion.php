@@ -7,6 +7,19 @@
 
 </head>
 <body>
+  <div class="header">
+  <ul class="social">
+    <li><a href="#">Facebook</a>
+      <li><a href="#">Instagram</a>
+      <li><a href="#">Google</a>
+    </li>
+  </ul>
+
+  <ul class="session">
+    <li><a href="frmLogin.php">Login</a>
+    </li>
+  </ul>
+  </div>
     <nav class="navbar navbar-expand-md navbar-light bg-light rounded mb-3">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
