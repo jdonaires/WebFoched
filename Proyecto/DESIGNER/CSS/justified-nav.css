@@ -19,6 +19,17 @@ body {
     padding: 14px 24px;
     font-size: 21px;
 }
+/*header*/
+.social{
+  list-style-type: none;
+  display: inline-block;
+}
+.social>li{
+  float: left;
+}
+.social>li>a{
+  padding-right: 10px;
+}
 
 .navbar {
     background-image: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7),to(#eee));
