@@ -24,7 +24,7 @@
   </ul>
   </div>
   <div class="logo">
-    <a><img src="IMG/bg0.jpg" alt="logo" width="50px" height="50px" ></a><!--cambiar logo-->
+    <a><img src="IMG/LOGO.png" alt="logo" width="50px" height="50px" ></a><!--cambiar logo-->
   </div>
     <nav class="navbar navbar-expand-md navbar-light bg-light rounded mb-3">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
