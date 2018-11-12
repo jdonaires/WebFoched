@@ -8,11 +8,11 @@
     <meta name="author" content="Ingenieria De Sistemas X">
 
     <title>Restaurantes</title>
-    <link href="CSS/StyleRestaurantes.css?ver=1.2" rel="stylesheet">
+    <link href="CSS/StyleRestaurantes.css?ver=1.3" rel="stylesheet">
 
 </head>
   <body>
-    <div class="container">
+  <div class="container">
         <div class="masthead">
              <?php include_once ('navegacion.php'); ?>
         </div>
