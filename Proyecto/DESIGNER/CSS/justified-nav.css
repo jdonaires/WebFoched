@@ -1,5 +1,11 @@
 body {
-    padding-top: 20px;
+padding-top: 0px;
+background-image: url("../IMG/fondo.jpg");
+background-color: #ffff; /* Used if the image is unavailable */
+height: 500px; /* You must set a specified height */
+background-position: auto; /* Center the image */
+background-repeat: repeat, repeat; /* Do not repeat the image */
+/*background-size: cover;*/ /* Resize the background image to cover the entire container */
 }
 
 .footer {
@@ -20,6 +26,13 @@ body {
     font-size: 21px;
 }
 /*header*/
+.header{
+  background-color:rgba(5, 5, 5,0.3);
+  padding-top: 20px;
+}
+.header a{
+  color: white;
+}
 .social{
   list-style-type: none;
   display: inline-block;
