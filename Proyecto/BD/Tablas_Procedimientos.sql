@@ -166,6 +166,85 @@ DELIMITER ;
 
 
 /*****************************************************
+Autor: Ever Néstarez Martinez
+Descripción: Resgistrar Usuarios
+Fecha Actualizacion: 19/11/2018
+Ejecutar: CALL sp_registrar_restaurante_r_c_u ('Pollos S.A','99999999999','facebook.pollos.sa','1','Werner','Heisenberg','123456789','234567890','345678901','facebook.W.Heisenberg','Here','Av. Plaza Sesamo','No Existe :v');
+******************************************************/
+DELIMITER $$
+CREATE PROCEDURE sp_registrar_restaurante_r_c_u
+(
+	_Razon_Social VARCHAR(50)
+,	_RUC_DNI VARCHAR(11)
+,	_Direccion_Red_Social VARCHAR(200)
+,	_Rol TINYINT /*1 - Dueño || 2 - Adminstrador || 3 - Gerente || ... */
+,	_Nombres	VARCHAR(100)
+,	_Apellidos VARCHAR(100)
+,	_Numero_1 VARCHAR(11)
+,	_Numero_2 VARCHAR(11)
+,	_Numero_3 VARCHAR(11)
+,	_Direccion_Red_Social_Contacto VARCHAR(200)
+,	_Nombre VARCHAR(200)
+,	_Direccion VARCHAR(500)
+,	_Referencia VARCHAR(500)
+)
+BEGIN
+	/* Tabla Restaurante */
+	INSERT INTO Restaurante 
+	(	Razon_Social
+	,	RUC_DNI
+	,	Direccion_Red_Social
+	)
+	VALUES
+	(	_Razon_Social
+	,	_RUC_DNI
+	,	_Direccion_Red_Social
+	);
+	
+	/* Tabla Contacto */
+	SET @id_restaurante = (SELECT MAX(Id_Restaurante) FROM Restaurante); 
+	/* SET @id_restaurante = (SELECT LAST_INSERT_ID()); */
+	INSERT INTO Contacto 
+	(	Id_Restaurante
+	,	Rol
+	,	Nombres
+	,	Apellidos
+	,	Numero_1
+	,	Numero_2
+	,	Numero_3
+	,	Direccion_Red_Social
+	)
+	VALUES
+	(	@id_restaurante
+	,	_Rol
+	,	_Nombres
+	,	_Apellidos
+	,	_Numero_1 
+	,	_Numero_2 
+	,	_Numero_3 
+	,	_Direccion_Red_Social_Contacto
+	);
+	
+	/* Tabla Ubicacion */
+	INSERT INTO Ubicacion 
+	(	Id_Restaurante
+	,	Nombre
+	,	Direccion
+	,	Referencia
+	)
+	VALUES
+	(	@id_restaurante
+	,	_Nombre
+	,	_Direccion
+	,	_Referencia
+	);
+	
+END$$
+DELIMITER ;
+
+
+
+/*****************************************************
 Autor: Pachas Villa Jesus Jeanmartin
 Descripción: Resgistrar Restaurante
 Fecha Actualizacion: 22/10/2018
