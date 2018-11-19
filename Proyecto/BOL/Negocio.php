@@ -1,5 +1,5 @@
 <?php
-class Restaurante
+class Negocio
 {
 	private $Id_Restaurante;
 	private $Razon_Social;

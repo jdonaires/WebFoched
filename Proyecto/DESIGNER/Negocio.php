@@ -1,3 +1,41 @@
+<?php
+require_once('../BOL/Negocio.php');
+require_once('../BOL/Contacto.php');
+require_once('../BOL/Ubicacion.php');
+
+require_once('../DAO/NegocioDAO.php');
+
+$negocio = new Negocio();
+$contacto = new Contacto();
+$ubicacion = new Ubicacion();
+
+$negocio_dao = new NegocioDAO();
+
+	
+if(isset($_POST['Registrar_Negocio']))
+{
+	$negocio->__SET('Razon_Social',         $_POST["Razon_Social"]);
+    $negocio->__SET('RUC_DNI', 	            $_POST["RUC_DNI"]);
+    $negocio->__SET('Direccion_Red_Social', $_POST["Direccion_Red_Social"]);
+
+    $contacto->__SET('Rol',                             $_POST["Rol"]);
+    $contacto->__SET('Nombres', 	                    $_POST["Nombres"]);
+    $contacto->__SET('Apellidos',                       $_POST["Apellidos"]);
+    $contacto->__SET('Numero_1',                        $_POST["Numero_1"]);
+    $contacto->__SET('Numero_2', 	                    $_POST["Numero_2"]);
+    $contacto->__SET('Numero_3',                        $_POST["Numero_3"]);
+    $contacto->__SET('Direccion_Red_Social_Contacto',   $_POST["Direccion_Red_Social_Contacto"]);
+
+    $ubicacion->__SET('Nombre',           $_POST["Nombre"]);
+    $ubicacion->__SET('Direccion',        $_POST["Direccion"]);
+    $ubicacion->__SET('Referencia',       $_POST["Referencia"]);
+
+	$negocio_dao->Registrar_Negocio($negocio,$contacto,$ubicacion);
+
+	//header('Location: frmLogin.php'); 
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -36,7 +74,7 @@
                         </tr>
                             <div class="espacio"> </div>
                         <tr>
-                            <input placeholder="Dirección De Red Social Del Negocio" onkeypress="" maxlength=11 name="Direccion_Red_Social" value="" type="text" required="">
+                            <input placeholder="Dirección De Red Social Del Negocio" onkeypress="" maxlength=50 name="Direccion_Red_Social" value="" type="text" required="">
                         </tr>
                             <div class="espacio"> </div>
                         <tr>

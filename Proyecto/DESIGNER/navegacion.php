@@ -39,9 +39,9 @@
                 <a class="nav-link" href="#">Nosotros</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias </a>
+                <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Administrar </a>
                 <div class="dropdown-menu" aria-labelledby="dropdown01">
-                    <a class="dropdown-item" href="Restaurantes.php">Restaurantes</a>
+                    <a class="dropdown-item" href="Negocio.php">Registrar Negocio</a>
                     <a class="dropdown-item" href="#">Pollerias</a>
                     <a class="dropdown-item" href="#">Chifas</a>
                     <a class="dropdown-item" href="#">Postrerìa</a>

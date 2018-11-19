@@ -33,7 +33,7 @@ CREATE TABLE Contacto
 (
 	Id_Contacto INT AUTO_INCREMENT NOT NULL
 ,	Id_Restaurante INT NOT NULL
-,	Rol TINYINT /*1 - Dueño || 2 - Adminstrador || 3 - Gerente || ... */
+,	Rol VARCHAR(25) /* Cargo Dentro Del Negocio */
 ,	Nombres	VARCHAR(100) NOT NULL
 ,	Apellidos VARCHAR(100) NOT NULL
 ,	Numero_1 VARCHAR(11) NOT NULL
@@ -177,7 +177,7 @@ CREATE PROCEDURE sp_registrar_restaurante_r_c_u
 	_Razon_Social VARCHAR(50)
 ,	_RUC_DNI VARCHAR(11)
 ,	_Direccion_Red_Social VARCHAR(200)
-,	_Rol TINYINT /*1 - Dueño || 2 - Adminstrador || 3 - Gerente || ... */
+,	_Rol VARCHAR(25)
 ,	_Nombres	VARCHAR(100)
 ,	_Apellidos VARCHAR(100)
 ,	_Numero_1 VARCHAR(11)
@@ -242,7 +242,7 @@ BEGIN
 END$$
 DELIMITER ;
 
-
+SELECT * FROM restaurante
 
 /*****************************************************
 Autor: Pachas Villa Jesus Jeanmartin
