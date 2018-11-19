@@ -2,14 +2,10 @@
 class Ubicacion
 {
 	private $Id_Ubicacion;
-  private $Id_Restaurante;
+  	private $Id_Restaurante;
 	private $Nombre;
-  private $Latitud;
-	private $Longitud;
+	private $Direccion;
 	private $Referencia;
-	private $Usuario_Creacion;
-	private $PC_Creacion;
-	private $Fecha_Creacion;
 	private $Estado;
 
 	public function __GET($x)

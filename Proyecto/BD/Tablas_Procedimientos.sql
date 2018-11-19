@@ -39,7 +39,7 @@ CREATE TABLE Contacto
 ,	Numero_1 VARCHAR(11) NOT NULL
 ,	Numero_2 VARCHAR(11) NULL
 ,	Numero_3 VARCHAR(11) NULL
-,	Direccion_Red_Social VARCHAR(200) NULL
+,	Direccion_Red_Social_Contacto VARCHAR(200) NULL
 , 	Estado 		CHAR(1) DEFAULT 1 NOT NULL
 ,	CONSTRAINT PRIMARY KEY(Id_Contacto)
 ,	CONSTRAINT FOREIGN KEY(Id_Restaurante) REFERENCES Restaurante(Id_Restaurante)
@@ -212,7 +212,7 @@ BEGIN
 	,	Numero_1
 	,	Numero_2
 	,	Numero_3
-	,	Direccion_Red_Social
+	,	Direccion_Red_Social_Contacto
 	)
 	VALUES
 	(	@id_restaurante
