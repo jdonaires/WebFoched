@@ -8,9 +8,9 @@ class Persona
 	private $sexo;
 	private $fecha_nacimiento;
 	private $dni;
-	private $Usuario_Creacion
-	private $PC_Creacion
-	private $Fecha_Creacion
+	private $Usuario_Creacion;
+	private $PC_Creacion;
+	private $Fecha_Creacion;
 
 	public function __GET($x)
 	{

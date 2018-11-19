@@ -6,9 +6,9 @@ class Plato
 	private $Nombre;
   private $Descripcion;
   private $Precio;
-	private $Usuario_Creacion
-	private $PC_Creacion
-	private $Fecha_Creacion
+	private $Usuario_Creacion;
+	private $PC_Creacion;
+	private $Fecha_Creacion;
 	private $Estado;
 
 	public function __GET($x)
