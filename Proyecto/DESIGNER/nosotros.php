@@ -151,8 +151,7 @@
   <div class="col-5 col-md-push-1 animate-box">
     <div class="section-heading">
       <h2>Vision</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae neque quisquam at deserunt ab praesentium architecto tempore saepe animi voluptatem molestias, eveniet aut laudantium alias, laboriosam excepturi, et numquam? Atque tempore iure tenetur perspiciatis, aliquam, asperiores aut odio accusamus, unde libero dignissimos quod aliquid neque et illo vero nesciunt. Sunt!</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam iure reprehenderit nihil nobis laboriosam beatae assumenda tempore, magni ducimus abentey.</p>
+      <p>En futuro ser la mejor alternativa en Diseño Web para las empresas nacionales e internacionales, que buscan oportunidades que internet ofrece en donde seremos veedores del crecimiento económico de las empresas brindando la mejor calidad de nuestros servicios y ver reflejada así la prosperidad de nuestra empresa.</p>
 
     </div>
   </div>
