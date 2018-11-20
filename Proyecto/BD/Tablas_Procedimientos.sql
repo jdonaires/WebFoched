@@ -1,7 +1,7 @@
 /*
 DROP DATABASE BD_WebFoched;
 */
-CREATE DATABASE BD_WebFoched;	
+CREATE DATABASE BD_WebFoched;
 
 USE BD_WebFoched;
 /*Como pueden observar se añadio la restricion DEFAULT al campo estado para que se genere en automatico y no ponerlo en los SP de registros*/
@@ -148,7 +148,7 @@ CREATE PROCEDURE sp_registrar_usuario
 ,	_correo 	VARCHAR(25)
 )
 BEGIN
-	INSERT INTO Usuario 
+	INSERT INTO Usuario
 	(	usuario
 	,	pass
 	,	correo
@@ -190,7 +190,7 @@ CREATE PROCEDURE sp_registrar_restaurante_r_c_u
 )
 BEGIN
 	/* Tabla Restaurante */
-	INSERT INTO Restaurante 
+	INSERT INTO Restaurante
 	(	Razon_Social
 	,	RUC_DNI
 	,	Direccion_Red_Social
@@ -200,11 +200,11 @@ BEGIN
 	,	_RUC_DNI
 	,	_Direccion_Red_Social
 	);
-	
+
 	/* Tabla Contacto */
-	SET @id_restaurante = (SELECT MAX(Id_Restaurante) FROM Restaurante); 
+	SET @id_restaurante = (SELECT MAX(Id_Restaurante) FROM Restaurante);
 	/* SET @id_restaurante = (SELECT LAST_INSERT_ID()); */
-	INSERT INTO Contacto 
+	INSERT INTO Contacto
 	(	Id_Restaurante
 	,	Rol
 	,	Nombres
@@ -219,14 +219,14 @@ BEGIN
 	,	_Rol
 	,	_Nombres
 	,	_Apellidos
-	,	_Numero_1 
-	,	_Numero_2 
-	,	_Numero_3 
+	,	_Numero_1
+	,	_Numero_2
+	,	_Numero_3
 	,	_Direccion_Red_Social_Contacto
 	);
-	
+
 	/* Tabla Ubicacion */
-	INSERT INTO Ubicacion 
+	INSERT INTO Ubicacion
 	(	Id_Restaurante
 	,	Nombre
 	,	Direccion
@@ -238,13 +238,14 @@ BEGIN
 	,	_Direccion
 	,	_Referencia
 	);
-	
+
 END$$
 DELIMITER ;
 
 
 
 /*****************************************************
+--
 Autor: Pachas Villa Jesus Jeanmartin
 Descripción: Resgistrar Restaurante
 Fecha Actualizacion: 22/10/2018
@@ -338,7 +339,7 @@ BEGIN
 	INSERT INTO Ubicacion
 	(	Id_Restaurante
 	,	Nombre
-	,	Direccion 
+	,	Direccion
 	,	Referencia
 	)
         VALUES
