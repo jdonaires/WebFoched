@@ -31,7 +31,6 @@ if(isset($_POST['RegistrarUsuario']))
         <meta name="author" content="Ingenieria De Sistemas X">
         <title>Login</title>
 
-		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="assets/css/main.css"/>
 		<link href="assets/css/StyleLogin.css" rel="stylesheet">
 
