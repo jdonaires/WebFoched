@@ -47,8 +47,6 @@ if(isset($_POST['Registrar_Negocio']))
         <title>Registro Del Negocio</title>
         <link rel="stylesheet" href="assets/css/main.css"/>
         <link href="assets/css/StyleRegistroNegocio.css" rel="stylesheet" />
-        <link href='https://fonts.googleapis.com/css?family=Quicksand:400,700' rel='stylesheet' type='text/css'>
-        <script src="https://use.fontawesome.com/26946e1ae5.js"></script>
   </head>
   <body class="is-preload">
 		<div id="page-wrapper">
