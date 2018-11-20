@@ -20,15 +20,20 @@ class UsuarioDAO
 		$statement->bindValue(2,$usuario->__GET('Pass')		,PDO::PARAM_STR);
 		$statement->bindValue(3,$usuario->__GET('Correo')	,PDO::PARAM_STR);
 		$statement -> execute();
-		
+		sleep(1);
 		echo'<script type="text/javascript">
     	alert("Registro Completado.");
-    	window.location.href="frmLogin.php";
+    	window.location.href="frmIngresar.php";
     	</script>';
 
 		} catch (Exception $e)
 		{
+			echo'<script type="text/javascript">
+    		alert("Error Al Registrar Sus Datos.");
+    		window.location.href="frmRegistrarse.php";
+    		</script>';
 			die($e->getMessage());
+			
 		}
 	}
 }

@@ -242,7 +242,7 @@ BEGIN
 END$$
 DELIMITER ;
 
-SELECT * FROM restaurante
+
 
 /*****************************************************
 Autor: Pachas Villa Jesus Jeanmartin
