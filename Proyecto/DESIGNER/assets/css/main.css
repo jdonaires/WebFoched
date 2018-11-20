@@ -3953,3 +3953,26 @@ body.landing #main {
     padding: 2.5em 1em 3em 1em;
   }
 }
+
+.img-wrap img{
+  margin-bottom: 50px;
+  padding-top: 50px;
+  width: 500px;
+  height: 400px;
+}
+.section-heading {
+  width: 100%;
+  float: left;
+  margin-bottom: 50px;
+}
+.section-heading h1{
+  text-align: center;
+  color: #646464;
+  font-weight: 100;
+  line-height: 0.5em;
+/*  margin: 0 0 0.5em 0;*/
+}
+
+.section-heading p{
+  text-align: justify;
+}
