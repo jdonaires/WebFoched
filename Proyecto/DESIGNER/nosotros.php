@@ -129,21 +129,7 @@
 
         <section class="box special features">
         <h2>Nosotros</h2>
-          <!--<div class="features-row">
-            <section>
-        <img  src="IMG/slide_11.jpg" alt="">
 
-              </section>
-            <section>
-          <span class="icon major"><img style="width: 75px; min-height: 75px;" src="IMG/Logos/LogoRestaurante.png" alt=""></span>
-          <h3>Mision</h3>
-              <p>
-                Integer volutpat ante et accumsan commophasellus sed aliquam
-                feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan
-                dolore magna aliquam veroeros.
-        </p>
-        <a href="#" class="button">Ir Categoria Restaurantes</a>
-            </section>-->
         <div class="row">
       <div class="col-md-6 col-md-pull-4 img-wrap animate-box" data-animate-effect="fadeInLeft">
         <img src="IMG/slide_1.jpg" position: alt="Free Restaurant Bootstrap Website Template by FreeHTML5.co">
@@ -151,8 +137,8 @@
       <div class="col-5 col-md-push-1 animate-box">
         <div class="section-heading">
           <h2>Mision</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae neque quisquam at deserunt ab praesentium architecto tempore saepe animi voluptatem molestias, eveniet aut laudantium alias, laboriosam excepturi, et numquam? Atque tempore iure tenetur perspiciatis, aliquam, asperiores aut odio accusamus, unde libero dignissimos quod aliquid neque et illo vero nesciunt. Sunt!</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam iure reprehenderit nihil nobis laboriosam beatae assumenda tempore, magni ducimus abentey.</p>
+          <p>Foched es una empresa con profesionales dedicados a la innovación en el diseño de páginas Web.</p>
+          <p>Foched se creó con el objetivo de ofrecer el crecimiento de los negocios aumentando las ventas de nuestros clientes, de la misma manera siendo reconocida a través de nuestra publicidad que brindamos.</p>
 
         </div>
       </div>
