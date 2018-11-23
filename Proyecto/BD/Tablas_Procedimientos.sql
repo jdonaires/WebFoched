@@ -96,30 +96,21 @@ CREATE TABLE Restaurante_Nivel_Economico
 ,	CONSTRAINT FOREIGN KEY(Id_Restaurante) REFERENCES Restaurante(Id_Restaurante)
 ,	CONSTRAINT FOREIGN KEY(Id_Nivel) REFERENCES Nivel_Economico(Id_Nivel)
 );
-
-CREATE TABLE Plato
+/*VOY A PONER UNA FORMA DE REGISTRAR LOS PLATOS Y BEBIDAS DE CADA PUNTO DE VENTA: DENTRO DE UN MOMENTO PASO EL PROCEDIMIENTO*/
+/*****************************************************
+Autor: Pachas Villa Jeanmartin
+Descripción: Tablas PRODUCTOS
+Fecha Actualizacion: 23/11/2018
+******************************************************/
+CREATE TABLE Producto
 (
-	Id_Plato INT AUTO_INCREMENT NOT NULL
-,	Id_Restaurante INT NOT NULL
+	Id_Producto INT AUTO_INCREMENT PRIMARY KEY NOT NULL
 ,	Nombre VARCHAR(30) NOT NULL
 ,	Descripcion VARCHAR(100) NULL
-,	Precio DECIMAL(3,2) NOT NULL
 , 	Estado 	CHAR(1) DEFAULT 1 NOT NULL
-,	CONSTRAINT PRIMARY KEY(Id_Plato)
-,	CONSTRAINT FOREIGN KEY(Id_Restaurante) REFERENCES Restaurante(Id_Restaurante)
 );
 
-CREATE TABLE Bebida
-(
-	Id_Bebida INT AUTO_INCREMENT NOT NULL
-,	Id_Restaurante INT NOT NULL
-,	Nombre VARCHAR(30) NOT NULL
-,	Descripcion VARCHAR(100) NULL
-,	Precio DECIMAL(3,2) NOT NULL
-, 	Estado CHAR(1) DEFAULT 1 NOT NULL
-,	CONSTRAINT PRIMARY KEY(Id_Bebida)
-,	CONSTRAINT FOREIGN KEY(Id_Restaurante) REFERENCES Restaurante(Id_Restaurante)
-);
+
 
 
 
