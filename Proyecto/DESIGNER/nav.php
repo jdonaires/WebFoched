@@ -7,6 +7,7 @@
       <a href="#" class="icon fa-angle-down">Administrar</a>
       <ul>
         <li><a href="Negocio.php">Registrar Negocio</a></li>
+        <li><a href="producto.php">Registrar Productos</a></li>
         <li><a href="generic.php">Generic</a></li>
         <li><a href="contact.php">Contact</a></li>
         <li><a href="elements.php">Elements</a></li>
