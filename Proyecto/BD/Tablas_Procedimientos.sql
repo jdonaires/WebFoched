@@ -109,6 +109,21 @@ CREATE TABLE Producto
 ,	Descripcion VARCHAR(100) NULL
 , 	Estado 	CHAR(1) DEFAULT 1 NOT NULL
 );
+/*****************************************************
+Autor: Guillen de la Cruz Antony
+Descripción: Tablas DETALLE_PRODUCTOS
+Fecha Actualizacion: 23/11/2018
+******************************************************/
+CREATE TABLE DETALLE_PRODUCTOS
+(
+Id_Detalle	INT AUTO_INCREMENT PRIMARY KEY,
+Producto_Id	INT,
+Restaurante_Id	INT,
+Precio		DECIMAL(5,2),
+CONSTRAINT FOREIGN KEY(Producto_Id) REFERENCES PRODUCTOS(Id_Producto),
+CONSTRAINT FOREIGN KEY(Restaurante_Id) REFERENCES RESTAURANTE(Id_Restaurante)
+)
+
 
 
 
