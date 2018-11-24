@@ -120,9 +120,9 @@ Id_Detalle	INT AUTO_INCREMENT PRIMARY KEY,
 Producto_Id	INT,
 Restaurante_Id	INT,
 Precio		DECIMAL(5,2),
-CONSTRAINT FOREIGN KEY(Producto_Id) REFERENCES PRODUCTOS(Id_Producto),
-CONSTRAINT FOREIGN KEY(Restaurante_Id) REFERENCES RESTAURANTE(Id_Restaurante)
-)
+CONSTRAINT FOREIGN KEY(Producto_Id) REFERENCES Producto(Id_Producto),
+CONSTRAINT FOREIGN KEY(Restaurante_Id) REFERENCES Restaurante(Id_Restaurante)
+);
 
 
 
