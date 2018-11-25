@@ -38,13 +38,13 @@
 							<tr>
 							<input type="password" placeholder="Contraseña" maxlength=20 name="Pass" required ="" />
 							</tr>
-						<span><i class="fa fa-user"></i></span>
+						<span><i class="fa fa-lock"></i></span>
 						</div>
 						<div class="input">
 							<tr>
 							<input type="email" placeholder="Correo" maxlength=20 name="Correo" required ="" />
 							</tr>
-						<span><i class="fa fa-user"></i></span>
+						<span><i class="fa fa-envelope"></i></span>
 						</div>
 						<?php
 							require_once('../BOL/Usuario.php');
