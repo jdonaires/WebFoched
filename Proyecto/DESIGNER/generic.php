@@ -1,3 +1,4 @@
+<?php require ('InicioSesion.php'); ?>
 <!DOCTYPE HTML>
 <html>
 	<head>

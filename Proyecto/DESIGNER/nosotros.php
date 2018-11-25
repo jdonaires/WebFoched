@@ -1,3 +1,4 @@
+<?php require ('InicioSesion.php'); ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -22,7 +23,6 @@
         <h2>Fooched</h2>
         <p>Encuentra El Mejor Establecimiento De Comida, Al Mejor Precio.</p>
         <ul class="actions special">
-          <li><a href="frmIngresar.php" class="button">Ingresar</a></li>
           <li><a href="#" class="button">Contactenos</a></li>
         </ul>
       </section>

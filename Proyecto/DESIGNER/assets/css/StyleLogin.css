@@ -1,3 +1,5 @@
+@import url("font-awesome.min.css");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic");
 * {
   -ms-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -11,11 +13,9 @@ html,
 body {
   width: 100%;
   height: 100%;
-  background: url(https://subtlepatterns.com/patterns/sativa.png) repeat fixed;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 200;
-
-  padding-top: 130px;
+  background: url("../../IMG/Fondos/Fondo_Iniciar_Sesion.png") repeat fixed;
+  font-family: "Source Sans Pro", sans-serif;
+  padding-top: 110px;
 }
 .login {
   position: relative;
@@ -73,7 +73,6 @@ body {
 .input input:focus {
   padding: 10px 5px 10px 10px;
   outline: 0;
-  border-color: #1abc9c;
 }
 .submit {
   width: 45px;
@@ -82,8 +81,8 @@ body {
   margin: 0 auto -15px auto;
   background: #fff;
   border-radius: 100%;
-  border: 1px solid #1abc9c;
-  color: #1abc9c;
+  border: 1px solid #98c1a2;
+  color: #98c1a2;
   font-size: 24px;
   cursor: pointer;
   box-shadow: 0px 0px 0px 7px #fff;
@@ -91,7 +90,7 @@ body {
 }
 .submit:hover,
 .submit:focus {
-  background: #1abc9c;
+  background: #98c1a2;
   color: #fff;
   outline: 0;
 }
@@ -100,7 +99,7 @@ body {
   width: 100%;
   text-align: center;
   color: #fff;
-  background: #1abc9c;
+  background: #98c1a2;
   padding: 0px 0;
   font-size: 12px;
   display: none;
@@ -120,7 +119,18 @@ body {
   position: absolute;
   pointer-events: none;
   border-color: rgba(46, 204, 113, 0);
-  border-bottom-color: #1abc9c;
+
   border-width: 10px;
   margin-left: -10px;
 }
+
+select:required:invalid {
+  color: gray;
+}
+option[value=""][disabled] {
+  display: none;
+}
+option {
+  color: black;
+}
+

@@ -1,25 +1,6 @@
-<?php
-require_once('../BOL/Usuario.php');
-require_once('../DAO/UsuarioDAO.php');
+<?php require ('InicioSesion.php'); ?>
 
-$user = new Usuario();
-$userDAO = new UsuarioDAO();
 
-	
-if(isset($_POST['RegistrarUsuario']))
-{
-	$var_usuario 	= $_POST["usuario"];
-	$var_pass 		= $_POST["pass"];
-	$var_correo 	= $_POST["correo"];
-
-	$user->__SET('Usuario', $var_usuario);
-    $user->__SET('Pass', 	$var_pass);
-    $user->__SET('Correo', 	$var_correo);
-	$userDAO->Registrar($user);
-
-	//header('Location: frmLogin.php'); 
-}
-?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -28,18 +9,21 @@ if(isset($_POST['RegistrarUsuario']))
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="Web">
         <meta name="author" content="Ingenieria De Sistemas X">
-        <title>Login</title>
+        <title>Ingresar</title>
 
-		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="assets/css/main.css"/>
 		<link href="assets/css/StyleLogin.css" rel="stylesheet">
+
+		<script src="alertify/alertify.js"></script>
+    	<link rel="stylesheet" type="text/css" href="alertify/css/alertify.css">
+    	<link rel="stylesheet" type="text/css" href="alertify/css/themes/bootstrap.css">
 
     </head>
     <body class="is-preload">
 		<div id="page-wrapper">
 			<!-- Header -->
 				<header id="header">
-					<?php include ('nav.php'); ?>
+					<?php require ('nav.php'); ?>
 				</header>
 
 				<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" method="post">
@@ -47,12 +31,12 @@ if(isset($_POST['RegistrarUsuario']))
 						<legend class="legend">Ingresar</legend>
 						
 						<div class="input">
-							<input type="email" placeholder="Email" maxlength=20 name="usuario" required ="" />
-						<span><i class="fa fa-envelope-o"></i></span>
+							<input type="text" placeholder="Usuario" maxlength=20 name="Usuario" required ="" />
+						<span><i class="fa fa-user"></i></span>
 						</div>
 						
 						<div class="input">
-							<input type="password" placeholder="Password" maxlength=20 name="usuario" required =""/>
+							<input type="password" placeholder="Contraseña" maxlength=20 name="Pass" required =""/>
 						<span><i class="fa fa-lock"></i></span>
 						</div>
 						
@@ -77,5 +61,32 @@ if(isset($_POST['RegistrarUsuario']))
 	  
 	<script src="assets/js/funciones.js"></script>
 	<script src="assets/js/Login.js"></script>
-
 </html>
+
+<?php
+require_once('../BOL/Usuario.php');
+require_once('../DAO/UsuarioDAO.php');
+
+$user = new Usuario();
+$userDAO = new UsuarioDAO();
+	
+if(isset($_POST['LoginUsuario']))
+{
+	$DatosObtenidos;
+    $user->__SET('Usuario', 	$_POST["Usuario"]);
+	$DatosObtenidos = $userDAO->Buscar($user);
+
+	if ($DatosObtenidos["Pass"] == sha1($_POST["Pass"])) {
+		$objSe->add_Usuario($DatosObtenidos["Usuario"]);
+
+		echo'	<script>;
+					alertify.success("Ingresando...");
+				 </script>';
+		header ("Refresh:1; url=index.php");
+	}
+	else
+		echo '	<script>
+		 			alertify.error("Usuario o Contraseña Incorrecta.");
+		 		</script>';
+}
+?>

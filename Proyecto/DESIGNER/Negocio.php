@@ -1,39 +1,18 @@
+
+<?php require ('InicioSesion.php'); ?>
+
 <?php
-require_once('../BOL/Negocio.php');
-require_once('../BOL/Contacto.php');
-require_once('../BOL/Ubicacion.php');
-
-require_once('../DAO/NegocioDAO.php');
-
-$negocio = new Negocio();
-$contacto = new Contacto();
-$ubicacion = new Ubicacion();
-
-$negocio_dao = new NegocioDAO();
-
-	
-if(isset($_POST['Registrar_Negocio']))
-{
-	$negocio->__SET('Razon_Social',         $_POST["Razon_Social"]);
-    $negocio->__SET('RUC_DNI', 	            $_POST["RUC_DNI"]);
-    $negocio->__SET('Direccion_Red_Social', $_POST["Direccion_Red_Social"]);
-
-    $contacto->__SET('Rol',       $_POST["Rol"]);
-    $contacto->__SET('Nombres',   $_POST["Nombres"]);
-    $contacto->__SET('Apellidos', $_POST["Apellidos"]);
-    $contacto->__SET('Numero_1',  $_POST["Numero_1"]);
-    $contacto->__SET('Numero_2', 	$_POST["Numero_2"]);
-    $contacto->__SET('Numero_3',  $_POST["Numero_3"]);
-    $contacto->__SET('Direccion_Red_Social_Contacto',   $_POST["Direccion_Red_Social_Contacto"]);
-
-    $ubicacion->__SET('Nombre',           $_POST["Nombre"]);
-    $ubicacion->__SET('Direccion',        $_POST["Direccion"]);
-    $ubicacion->__SET('Referencia',       $_POST["Referencia"]);
-
-	$negocio_dao->Registrar_Negocio($negocio,$contacto,$ubicacion);
-
-	//header('Location: frmLogin.php'); 
-}
+    // Verificar Si Existe Una Sesión.
+    try {
+      if ($objSe->get_Usuario() == null) {
+            echo'	<script>;
+                    alertify.error("Debe Iniciar Session Primero.");
+                  </script>';
+            header ("Refresh:1; url=frmIngresar.php");
+    }
+    } catch (Exception $e){
+      die($e->getMessage());
+    }
 ?>
 
 <!DOCTYPE html>
@@ -47,13 +26,18 @@ if(isset($_POST['Registrar_Negocio']))
         <title>Registro Del Negocio</title>
         <link rel="stylesheet" href="assets/css/main.css"/>
         <link href="assets/css/StyleRegistroNegocio.css" rel="stylesheet" />
+
+        <script src="alertify/alertify.js"></script>
+        <link rel="stylesheet" type="text/css" href="alertify/css/alertify.css">
+        <link rel="stylesheet" type="text/css" href="alertify/css/themes/bootstrap.css">
+
   </head>
   <body class="is-preload">
 		<div id="page-wrapper">
 
 			<!-- Header -->
 				<header id="header">
-					<?php include ('nav.php'); ?>
+          <?php include_once ('Nav.php'); ?>
         </header>
         
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'])?>" method="post" class="formulario">
@@ -124,3 +108,49 @@ if(isset($_POST['Registrar_Negocio']))
       <script src="assets/js/funciones.js"></script>
       <script src="assets/js/Logo.js"></script>
 </html>
+
+<?php
+require_once('../BOL/Negocio.php');
+require_once('../BOL/Contacto.php');
+require_once('../BOL/Ubicacion.php');
+
+require_once('../DAO/NegocioDAO.php');
+
+$negocio = new Negocio();
+$contacto = new Contacto();
+$ubicacion = new Ubicacion();
+
+$negocio_dao = new NegocioDAO();
+
+if(isset($_POST['Registrar_Negocio']))
+{
+	  $negocio->__SET('Razon_Social',         $_POST["Razon_Social"]);
+    $negocio->__SET('RUC_DNI', 	            $_POST["RUC_DNI"]);
+    $negocio->__SET('Direccion_Red_Social', $_POST["Direccion_Red_Social"]);
+
+    $contacto->__SET('Rol',       $_POST["Rol"]);
+    $contacto->__SET('Nombres',   $_POST["Nombres"]);
+    $contacto->__SET('Apellidos', $_POST["Apellidos"]);
+    $contacto->__SET('Numero_1',  $_POST["Numero_1"]);
+    $contacto->__SET('Numero_2', 	$_POST["Numero_2"]);
+    $contacto->__SET('Numero_3',  $_POST["Numero_3"]);
+    $contacto->__SET('Direccion_Red_Social_Contacto',   $_POST["Direccion_Red_Social_Contacto"]);
+
+    $ubicacion->__SET('Nombre',           $_POST["Nombre"]);
+    $ubicacion->__SET('Direccion',        $_POST["Direccion"]);
+    $ubicacion->__SET('Referencia',       $_POST["Referencia"]);
+
+    
+    $validar = $negocio_dao->Registrar_Negocio($negocio,$contacto,$ubicacion);
+    if ($validar = '1') {
+      echo'	<script>;
+            alertify.success("Registro Completado.");
+          </script>';
+      header ("Refresh:2; url=frmIngresar.php");
+    } else {
+      echo'	<script>;
+            alertify.error("Error Rellene Los Campos Correctamente.");
+          </script>';
+    }
+}
+?>

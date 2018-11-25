@@ -33,14 +33,12 @@ class NegocioDAO
 		$statement->bindValue(13,$ubicacion->__GET('Referencia')	,PDO::PARAM_STR);
 
 		$statement -> execute();
-		
-		echo'<script type="text/javascript">
-    	alert("Registro Completado.");
-    	window.location.href="Negocio.php";
-    	</script>';
+
+		return '1';
 
 		} catch (Exception $e)
 		{
+			return '0';
 			die($e->getMessage());
 		}
 	}

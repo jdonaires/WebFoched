@@ -1,7 +1,7 @@
 
 
 ::selection {
-  background: #1abc9c;
+  background: #98c1a2;
 }
 
 body{
@@ -44,7 +44,7 @@ body{
 .formulario .input_textual:focus {
   outline: none;
   border: none;
-  border-right: 13px solid #1abc9c;
+  border-right: 13px solid #98c1a2;
   box-shadow: 1px 5px 10px #CCC;
 }
 .formulario .input_textual:focus {
@@ -97,7 +97,7 @@ body{
   outline: none;
   width: 100%;
   position: relative;
-  background: #1abc9c;
+  background: #98c1a2;
   color: #FFF;
   bottom: -3px;
   left: 0px;
@@ -166,7 +166,7 @@ body{
 .upload-image .input-holder .icon, .upload-image .preview-img-holder .icon {
   display: inline-block;
   font-size: 3em;
-  color: #1abc9c;
+  color: #98c1a2;
 }
 
 .preview-img-upload .preview-img-holder {

@@ -3,7 +3,7 @@ class DBAccess
 {
   private $conn;
   private $host = "localhost";
-  private $dbname = "bd_webfoched";
+  private $dbname = "BD_WebFoched";
   private $user = "root";
   private $pass = "";
 

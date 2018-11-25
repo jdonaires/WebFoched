@@ -16,11 +16,13 @@ class PersonaDAO
 	{
 		try
 		{
-		$statement = $this->pdo->prepare("CALL up_insertar_persona(?,?,?)");
-    $statement->bindParam(1,$persona->__GET('nombres'));
+		$statement = $this->pdo->prepare("CALL sp_registrar_usuario(?,?,?,?,?)");
+    	$statement->bindValue(1,$negocio->__GET('Razon_Social')			,PDO::PARAM_STR);
 		$statement->bindParam(2,$persona->__GET('apellidos'));
 		$statement->bindParam(3,$persona->__GET('dni'));
-    $statement -> execute();
+		$statement->bindParam(2,$persona->__GET('apellidos'));
+		$statement->bindParam(3,$persona->__GET('dni'));
+    	$statement -> execute();
 
 		} catch (Exception $e)
 		{

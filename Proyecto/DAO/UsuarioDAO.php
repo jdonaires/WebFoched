@@ -15,25 +15,38 @@ class UsuarioDAO
 	{
 		try
 		{
-		$statement = $this->pdo->prepare("CALL sp_registrar_usuario(?,?,?)");
-    	$statement->bindValue(1,$usuario->__GET('Usuario')	,PDO::PARAM_STR);
-		$statement->bindValue(2,$usuario->__GET('Pass')		,PDO::PARAM_STR);
-		$statement->bindValue(3,$usuario->__GET('Correo')	,PDO::PARAM_STR);
+		$statement = $this->pdo->prepare("CALL sp_registrar_usuario(?,?,?,?)");
+    	$statement->bindValue(1,$usuario->__GET('Usuario')		,PDO::PARAM_STR);
+		$statement->bindValue(2,$usuario->__GET('Pass')			,PDO::PARAM_STR);
+		$statement->bindValue(3,$usuario->__GET('Correo')		,PDO::PARAM_STR);
+		$statement->bindValue(4,$usuario->__GET('Rol')			,PDO::PARAM_STR);
 		$statement -> execute();
-		sleep(1);
-		echo'<script type="text/javascript">
-    	alert("Registro Completado.");
-    	window.location.href="frmIngresar.php";
-    	</script>';
+
+		return '1';
 
 		} catch (Exception $e)
 		{
-			echo'<script type="text/javascript">
-    		alert("Error Al Registrar Sus Datos.");
-    		window.location.href="frmRegistrarse.php";
-    		</script>';
+			return '0';
 			die($e->getMessage());
-			
+		}
+	}
+
+	public function Buscar(Usuario $usuario)
+	{
+		try
+		{
+		$statement = $this->pdo->prepare("CALL sp_buscar_usuario(?)");
+    	$statement->bindValue(1,$usuario->__GET('Usuario')		,PDO::PARAM_STR);
+		$statement -> execute();
+		if ($statement != false){
+			return $statement->fetch(PDO::FETCH_ASSOC);
+		} else {
+			return null;
+		}
+
+		} catch (Exception $e)
+		{
+			die($e->getMessage());
 		}
 	}
 }

@@ -1,3 +1,5 @@
+<?php require ('InicioSesion.php'); ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -9,12 +11,19 @@
     />
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+
+    <script src="alertify/alertify.js"></script>
+    <link rel="stylesheet" type="text/css" href="alertify/css/alertify.css">
+    <link rel="stylesheet" type="text/css" href="alertify/css/themes/bootstrap.css">
+
   </head>
   <body class="landing is-preload">
     <div id="page-wrapper">
       <!-- Header -->
       <header id="header" class="alt">
-        <?php include ('nav.php'); ?>
+      
+        <?php require_once ('nav.php'); ?>
+
       </header>
 
       <!-- Banner -->
@@ -22,7 +31,6 @@
         <h2>Fooched</h2>
         <p>Encuentra El Mejor Establecimiento De Comida, Al Mejor Precio.</p>
         <ul class="actions special">
-          <li><a href="frmIngresar.php" class="button">Ingresar</a></li>
           <li><a href="#" class="button">Contactenos</a></li>
         </ul>
       </section>

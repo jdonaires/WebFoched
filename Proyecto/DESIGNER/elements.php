@@ -1,3 +1,4 @@
+<?php require ('InicioSesion.php'); ?>
 <!DOCTYPE HTML>
 <!--
 	Alpha by HTML5 UP
