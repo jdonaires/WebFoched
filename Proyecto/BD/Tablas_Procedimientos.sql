@@ -11,6 +11,7 @@ CREATE TABLE Usuario
 ,	Usuario VARCHAR(20) NOT NULL
 ,	Pass VARCHAR(200) NOT NULL
 ,	Correo VARCHAR(50) NOT NULL
+,	Rol VARCHAR(20) DEFAULT 'Normal' /* Normal = Usuarios De La Web || Admin = Usuarios Con Permisos */
 , 	Fecha_Creacion  DATETIME NOT NULL
 , 	Estado 		CHAR(1) DEFAULT 1 NOT NULL
 ,	CONSTRAINT PRIMARY KEY(Id_Usuario)
@@ -137,36 +138,49 @@ CONSTRAINT FOREIGN KEY(Restaurante_Id) REFERENCES Restaurante(Id_Restaurante)
 /**************************************************************************************************************************/
 
 
-
-
 USE BD_WebFoched;
 /*****************************************************
 Autor: Ever Néstarez Martinez
 Descripción: Resgistrar Usuarios
-Fecha Actualizacion: 23/10/2018
-Ejecutar: CALL sp_registrar_usuario('usuario','pass','correo@mail.com')
+Fecha Actualizacion: 25/11/2018
+Ejecutar: CALL sp_registrar_usuario ('Admin123','75813761','xxever28xx@gmail.com','Admin');
 ******************************************************/
 DELIMITER $$
-CREATE PROCEDURE sp_registrar_usuario
-(
-	_usuario 	VARCHAR(20)
-,	_pass 		VARCHAR(20)
-,	_correo 	VARCHAR(25)
+CREATE PROCEDURE sp_registrar_usuario(
+	_Usuario 	VARCHAR(20)
+,	_Pass 		VARCHAR(20)
+,	_Correo 	VARCHAR(20)
+,	_Rol 		VARCHAR(50)
 )
-BEGIN
-	INSERT INTO Usuario
-	(	usuario
-	,	pass
-	,	correo
-	,	Fecha_Creacion
-	)
-	VALUES
-	(	_usuario
-	,	_pass
-	,	_correo
-	,	NOW()
-	);
-END$$
+	BEGIN
+	IF _Rol = 'Admin' THEN 
+		INSERT INTO Usuario (Usuario,Pass,Correo,Rol,Fecha_Creacion) 
+		VALUES (_Usuario,SHA1(_Pass),_Correo,_Rol,NOW());
+	ELSE
+		INSERT INTO Usuario (Usuario,Pass,Correo,Fecha_Creacion) 
+		VALUES (_Usuario,SHA1(_Pass),_Correo,NOW());
+	END IF;
+	END$$
+DELIMITER ;
+
+CALL sp_registrar_usuario ('Admin123','75813761','xxever28xx@gmail.com','Admin');
+CALL sp_registrar_usuario ('Normal123','75813761','ever28@gmail.com','');
+SELECT * FROM Usuario;
+
+
+/*****************************************************
+Autor: Ever Néstarez Martinez
+Descripción: Buscar Usuario ID
+Fecha Actualizacion: 25/11/2018
+Ejecutar: CALL sp_buscar_usuario('Admin123');
+******************************************************/
+DELIMITER $$
+CREATE PROCEDURE sp_buscar_usuario(
+	_Usuario 	VARCHAR(20)
+    )
+	BEGIN
+		SELECT * FROM Usuario WHERE Usuario.Usuario = _Usuario AND Usuario.Estado = '1';
+	END$$
 DELIMITER ;
 
 
