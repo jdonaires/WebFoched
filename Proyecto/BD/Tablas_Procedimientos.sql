@@ -16,6 +16,7 @@ CREATE TABLE Usuario
 , 	Estado 		CHAR(1) DEFAULT 1 NOT NULL
 ,	CONSTRAINT PRIMARY KEY(Id_Usuario)
 ,	CONSTRAINT uni_correo UNIQUE (Correo)
+,	CONSTRAINT uni_usuario UNIQUE (Usuario)
 ,	CONSTRAINT ck_estado_usuario CHECK (Estado IN ('0','1'))
 );
 

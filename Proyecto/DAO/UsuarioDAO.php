@@ -26,8 +26,10 @@ class UsuarioDAO
 
 		} catch (Exception $e)
 		{
-			return '0';
-			die($e->getMessage());
+			echo'	<script>;
+						alertify.error("Error En el Registro.");
+					</script>';
+			return null;
 		}
 	}
 

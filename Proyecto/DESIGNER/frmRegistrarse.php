@@ -111,26 +111,33 @@ $userDAO = new UsuarioDAO();
 	
 if(isset($_POST['RegistrarUsuario']))
 {
+	try
+		{
+			$user->__SET('Usuario', 	$_POST["Usuario"]);
+			$user->__SET('Pass', 		$_POST["Pass"]);
+			$user->__SET('Correo', 		$_POST["Correo"]);
+		
+			if( !empty($_POST['Rol'])){
+				$user->__SET('Rol', $_POST['Rol']);
+			}
+		
+			
+			$validar = $userDAO->Registrar($user);
+		
+			if ($validar != null) {
+				echo'	<script>;
+							alertify.success("Registro Completado. Ya Puedes Iniciar Sesión.");
+						</script>';
+				header ("Refresh:3; url=frmIngresar.php");
+			}
 
-	$user->__SET('Usuario', 	$_POST["Usuario"]);
-    $user->__SET('Pass', 		$_POST["Pass"]);
-	$user->__SET('Correo', 		$_POST["Correo"]);
-
-	if( !empty($_POST['Rol'])){
-		$user->__SET('Rol', $_POST['Rol']);
-	}
+		} catch (Exception $e)
+		{
+			echo'	<script>;
+						alertify.error("Error En el Registro.");
+					</script>';
+		}
 
 	
-	$validar = $userDAO->Registrar($user);
-	if ($validar = '1') {
-		echo'	<script>;
-					alertify.success("Registro Completado.");
-				</script>';
-		
-	} else {
-		echo'	<script>;
-					alertify.error("Error Rellene Los Campos Correctamente.");
-				</script>';
-	};
 }
 ?>
