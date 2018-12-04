@@ -35,24 +35,47 @@
 
       </section>
       <!-- Main -->
-    <section id="main" class="container">
+      <div class="campo-busqueda">
+              <div class="input">
+                  <label>Dónde ir</label>
+                        <span class="input-icon ubicacion">
+                          <input type="text" id="nombre_mixto" name="nombre_mixto" value="" placeholder="Introduce plato, distrito, restaurant..." class="default-input ui-autocomplete-input" />
+                          <input type="hidden" id="id_destino" name="id_destino" value=""/>
+                        </span>
+              </div>
+        </div>
 
-        <form role="form">
-            <div class="form-group input-group" style="height:50%; padding-left: 50px; padding-right: 50px;">
-                <input type="text" class="form-control btn-light" id="inputBuscar" placeholder="Buscar" style="background-color: #f5f5f5; color: #000000;">
-                <samp style="padding-left: 50px;"></samp>
-                <div class="form-group">
-                    <select id="formInput25" class="form-control btn-light" style="background-color: #f5f5f5; color: #000000;">
-                        <option>Todos</option>
-                        <option>Pollerias</option>
-                        <option>Restaurantes</option>
-                    </select>
-                </div>
-                <samp style="padding-left: 50px;"></samp>
-                <button type="submit" class="btn btn-light" style="height: 100%; background-color: #f5f5f5; color: #000000;">Buscar</button>
+                <div class="columns">
+                  <div class="campo-tipo campo-show ">
+                    <label for="tipo_cocina"><span>¿Donde?¿Qué tipo de cocina?</span></label>
+                  <div class="select-wrapper">
+      <select name="tipo_cocina" id="tipo_cocina" data-placeholder="Cualquier tipo" class="category select-native select-native--white-no-border" title="¿Qué tipo de cocina?">
+                <option value="0">Cualquier tipo</option>
+                    <optgroup label="Tipo de Restaurant">
+                        <option value="">Polleria</option>
+                        <option value="">Fusión</option>
+                        <option value="">Pescado</option>
+                        <option value="">Parrillada</option>
+                        <option value="">Cafetería</option>
+                        <option value="">Casera</option>
+                        <option value="">Cebichería</option>
+                        <option value="">Chifa</option>
+                        <option value="">De Mercado</option>
+                        <option value="">Típicas</option>
+                        <option value="">Variada</option>
+
+                    </optgroup>
+                    <optgroup label="Distrito">
+                        <option value="">Pueblo Nuevo</option>
+                        <option value="">Chincha Baja</option>
+                        <option value="">Chincha Baja</option>
+                        <option value="">Pueblo Nuevo</option>
+                        <option value="">Grocio Prado</option>
+                        <option value="">Sunampe</option>
+                    </optgroup>
+              </select>
             </div>
-        </form>
-      </section>
+        </div>
       <!-- Footer -->
       <footer id="footer">
         <ul class="icons">
