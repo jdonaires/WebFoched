@@ -14,10 +14,17 @@ class Sesion
     {
         return $this->username;
     }
-    public function add_Usuario($user)
+    public function add_Usuario($user/* ,$pass,$recordar*/)
     {
         $_SESSION["Usuario"]=$user;
         $this->username = $user;
+
+        /*
+        if ($recordar) {
+            setcookie("Usuario",$user,time()+(60 *60));
+            setcookie("Pass",$pass,time()+(60 *60));
+        }
+        */
     }
     public function cerrar_sesion()
     {

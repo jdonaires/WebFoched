@@ -61,7 +61,8 @@ body {
   top: 8px;
   font-size: 20px;
 }
-.input input {
+.input input[type="text"],
+input[type="password"] {
   width: 100%;
   padding: 10px 5px 10px 40px;
   display: block;
@@ -70,7 +71,8 @@ body {
   transition: 0.2s ease-out;
   color: #a1a1a1;
 }
-.input input:focus {
+.input input[type="text"]:focus,
+input[type="password"]:focus {
   padding: 10px 5px 10px 10px;
   outline: 0;
 }
@@ -132,5 +134,55 @@ option[value=""][disabled] {
 }
 option {
   color: black;
+}
+
+
+
+.ckb {
+  padding: 0px 5px 10px 220px;
+  outline: 0;
+}
+
+input[type=checkbox]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+}
+
+label {
+	cursor: pointer;
+	text-indent: -160px;
+	width: 80px;
+	height: 30px;
+	background: grey;
+	display: block;
+	border-radius: 100px;
+  position: relative;
+  font-size: 18px;
+}
+
+label:after {
+	content: '';
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: 20px;
+	height: 20px;
+	background: #fff;
+	border-radius: 90px;
+	transition: 0.3s;
+}
+
+input:checked + label {
+	background: #1abc9c;
+}
+
+input:checked + label:after {
+	left: calc(100% - 5px);
+	transform: translateX(-100%);
+}
+
+label:active:after {
+	width: 130px;
 }
 
