@@ -34,7 +34,25 @@
         <p>Encuentra El Mejor Establecimiento De Comida, Al Mejor Precio.</p>
 
       </section>
-      
+      <!-- Main -->
+    <section id="main" class="container">
+
+        <form role="form">
+            <div class="form-group input-group" style="height:50%; padding-left: 50px; padding-right: 50px;">
+                <input type="text" class="form-control btn-light" id="inputBuscar" placeholder="Buscar" style="background-color: #f5f5f5; color: #000000;">
+                <samp style="padding-left: 50px;"></samp>
+                <div class="form-group">
+                    <select id="formInput25" class="form-control btn-light" style="background-color: #f5f5f5; color: #000000;">
+                        <option>Todos</option>
+                        <option>Pollerias</option>
+                        <option>Restaurantes</option>
+                    </select>
+                </div>
+                <samp style="padding-left: 50px;"></samp>
+                <button type="submit" class="btn btn-light" style="height: 100%; background-color: #f5f5f5; color: #000000;">Buscar</button>
+            </div>
+        </form>
+      </section>
       <!-- Footer -->
       <footer id="footer">
         <ul class="icons">
