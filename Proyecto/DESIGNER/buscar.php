@@ -35,58 +35,96 @@
 
       </section>
       <!-- Main -->
+          <section id="main" class="container">
       <div class="campo-busqueda">
-        <div class="input input-txt ">
-            <label>Dónde ir</label>
-                  <span class="input-icon ubicacion">
-                    <input type="text" id="nombre_mixto" name="nombre_mixto" value="" placeholder="Introduce plato, distrito, restaurant..." class="default-input ui-autocomplete-input" />
-                    <input type="hidden" id="id_destino" name="id_destino" value=""/>
-                  </span>
-        </div>
-  </div>
-
-          <div class="columns large-5 pad0">
-            <div class="campo-tipo campo-show ">
-              <label for="tipo_cocina"><span>¿Donde?¿Qué tipo de cocina?</span></label>
-            <div class="select-wrapper">
-<select name="tipo_cocina" id="tipo_cocina" data-placeholder="Cualquier tipo" class="category select-native select-native--white-no-border" title="¿Qué tipo de cocina?">
-          <option value="0">Cualquier tipo</option>
-              <optgroup label="Tipo de Restaurant">
-                  <option value="">Polleria</option>
-                  <option value="">Fusión</option>
-                  <option value="">Pescado</option>
-                  <option value="">Parrillada</option>
-                  <option value="">Cafetería</option>
-                  <option value="">Casera</option>
-                  <option value="">Cebichería</option>
-                  <option value="">Chifa</option>
-                  <option value="">De Mercado</option>
-                  <option value="">Típicas</option>
-                  <option value="">Variada</option>
-
-              </optgroup>
-              <optgroup label="Distrito">
-                  <option value="">Pueblo Nuevo</option>
-                  <option value="">Chincha Baja</option>
-                  <option value="">Chincha Baja</option>
-                  <option value="">Pueblo Nuevo</option>
-                  <option value="">Grocio Prado</option>
-                  <option value="">Sunampe</option>
-              </optgroup>
-        </select>
-      </div>
-  </div>
-
-
-                </div>
-                <div class="hom-buscador-btn campo-show form-submit columns end medium-4 medium-centered large-2 large-uncentered">
-                  <input class="btn large" id="btnBuscar" type="submit" value="BUSCAR">
-                </div>
-                </div>
-          </form>
-        </div>
+              <div class="input">
+                  <label>Dónde ir</label>
+                        <span class="input-icon ubicacion">
+                          <input type="text" id="nombre_mixto" name="nombre_mixto" value="" placeholder="Introduce plato, distrito, restaurant..." class="default-input ui-autocomplete-input" />
+                          <input type="hidden" id="id_destino" name="id_destino" value=""/>
+                        </span>
+              </div>
         </div>
 
+                <div class="columns large-5 pad0">
+                  <div class="campo-tipo campo-show wrap-input wrap-input-first-half columns medium-6">
+                    <label for="tipo_cocina"><span>¿Donde?¿Qué tipo de cocina?</span></label>
+                  <div class="select-wrapper">
+      <select name="tipo_cocina" id="tipo_cocina" data-placeholder="Cualquier tipo" class="category select-native select-native--white-no-border" title="¿Qué tipo de cocina?">
+                <option value="0">Cualquier tipo</option>
+                    <optgroup label="Tipo de Restaurant">
+                        <option value="">Polleria</option>
+                        <option value="">Fusión</option>
+                        <option value="">Pescado</option>
+                        <option value="">Parrillada</option>
+                        <option value="">Cafetería</option>
+                        <option value="">Casera</option>
+                        <option value="">Cebichería</option>
+                        <option value="">Chifa</option>
+                        <option value="">De Mercado</option>
+                        <option value="">Típicas</option>
+                        <option value="">Variada</option>
+
+                    </optgroup>
+                    <optgroup label="Distrito">
+                        <option value="">Pueblo Nuevo</option>
+                        <option value="">Chincha Baja</option>
+                        <option value="">Chincha Baja</option>
+                        <option value="">Pueblo Nuevo</option>
+                        <option value="">Grocio Prado</option>
+                        <option value="">Sunampe</option>
+                    </optgroup>
+              </select>
+            </div>
+        </div>
+      </section>
+
+      <section id="list-restaurant" class="box special list">
+
+        <div class="container">
+          <div class="row">
+        <div class="col-3  fh5co-item-wrap animate-box">
+          <div class="fh5co-item">
+            <img src="images/pic02.jpg" class="img-restaurant" alt="Free Restaurant Bootstrap Website Template by FreeHTML5.co">
+            <h3>Bake Potato Pizza</h3>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos nihil cupiditate ut vero alias quaerat inventore molestias vel suscipit explicabo.</p>
+<a href="cateRestaurantes.php" class="button-rest">Ver</a><!--primer cambio-->
+          </div>
+        </div>
+
+        <div class="col-3  fh5co-item-wrap animate-box">
+          <div class="item">
+            <img src="images/pic02.jpg" class="img-restaurant" alt="">
+            <h3>Restaurant</h3>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos nihil cupiditate ut vero alias quaerat inventore molestias vel suscipit explicabo.</p>
+<a href="cateRestaurantes.php" class="button-rest">Ver</a><!--primer cambio-->
+          </div>
+        </div>
+
+        <div class="col-3  fh5co-item-wrap animate-box">
+          <div class="item">
+            <img src="images/pic02.jpg" class="img-restaurant" alt="Free Restaurant Bootstrap Website Template by FreeHTML5.co">
+            <h3>Restaurant</h3>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos nihil cupiditate ut vero alias quaerat inventore molestias vel suscipit explicabo.</p>
+            <a href="cateRestaurantes.php" class="button-rest">Ver</a><!--primer cambio-->
+          </div>
+        </div>
+        <div class="col-3  fh5co-item-wrap animate-box">
+          <div class="item">
+            <img src="images/pic02.jpg" class="img-restaurant" alt="Free Restaurant Bootstrap Website Template by FreeHTML5.co">
+            <h3>Restaurant</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos nihil cupiditate ut vero alias quaerat inventore molestias vel suscipit explicabo.</p>
+            <a href="cateRestaurantes.php" class="button-rest">Ver</a><!--primer cambio-->
+
+        </div>
+          </div>
+        </div>
+
+      </section>
+    </section>
 
 
 
