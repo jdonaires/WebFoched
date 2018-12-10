@@ -9,7 +9,7 @@
             } else echo null;
           ?>
     <li><a href="index.php">Inicio</a></li>
-    <li><a href="">Buscar</a></li>
+    <li><a href="buscar.php">Buscar</a></li>
     <li><a href="nosotros.php">Nosotros</a></li>
     <li>
       <a href="#" class="icon fa-angle-down">Administrar</a>

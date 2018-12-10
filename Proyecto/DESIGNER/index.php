@@ -29,7 +29,7 @@
       <!-- Banner -->
       <section id="banner">
         <h2>Fooched</h2>
-        <p>Encuentra El Mejor Establecimiento De Comida, Al Mejor Precio.</p>
+        <p>Encuentra el mejor establecimiento de comida al mejor precio</p>
         <ul class="actions special">
           <li><a href="#" class="button">Contactenos</a></li>
         </ul>

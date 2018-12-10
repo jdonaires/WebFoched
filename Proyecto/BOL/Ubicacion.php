@@ -3,10 +3,12 @@ class Ubicacion
 {
 	private $Id_Ubicacion;
   	private $Id_Restaurante;
-	private $Nombre;
+	private $Distrito;
 	private $Direccion;
 	private $Referencia;
 	private $Estado;
+	private $Lat;
+	private $Lng;
 
 	public function __GET($x)
 	{
