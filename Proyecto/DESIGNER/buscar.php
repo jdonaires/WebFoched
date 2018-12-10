@@ -33,9 +33,11 @@
         <h2>Fooched</h2>
         <p>Encuentra el mejor establecimiento de comida al mejor precio</p>
         <ul class="actions special">
-          <li><button class="button" id="mostrarEstablecimientos" onclick="printModal('Cargando mapa, por favor espere...');">Ver el mapa de establecimientos en Chincha</button></li>
+          <li><button class="button" id="mostrarEstablecimientos">Ver el mapa de establecimientos en Chincha</button></li>
         </ul>
+        <section id="map"></section>
       </section>
+      
       
       <!-- Main -->
       <section id="main" class="container">
@@ -177,6 +179,6 @@
       <script src="assets/js/breakpoints.min.js"></script>
       <script src="assets/js/util.js"></script>
       <script src="assets/js/main.js"></script>
-      <script src="assets/js/buscarMapModal.js"></script>
+      <script src="assets/js/buscarMapModal.js?v=2"></script>
     </body>
     </html>

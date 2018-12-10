@@ -40,11 +40,12 @@ const GET_UbicacionUsuario = () =>
 
 const DibujarMapa = (ubicacionUsuario) =>
 {
-    let mapa = new google.maps.Map(document.getElementById('map-negocios'), {
+    let map = document.getElementById('map').style.display = "block";
+    let mapa = new google.maps.Map(document.getElementById('map'), {
         center: ubicacionUsuario,
         zoom: 14
     });
-
+console.log(ubicacionUsuario);
     let marcadorUsuario = new google.maps.Marker({
         position: ubicacionUsuario,
         title: 'Usted esta aquí'
@@ -63,7 +64,7 @@ const DibujarMapa = (ubicacionUsuario) =>
 }
 
 
-//Crear y mostrar mapa
+/* //Crear y mostrar mapa
 // Añadir un objeto de atributos a un elemento
 const addAttributes = (element, attrObj) => {
     for (attr in attrObj){
@@ -110,7 +111,7 @@ const printModal = content =>{
     modalContainerEl.addEventListener('click', e =>{
         if(e.target === modalContainerEl) removeModal();
     });
-}
+} */
 
 /* document.getElementById('btJson').addEventListener('click', () =>{
     printModal('Cargando mapa, por favor espere...');
