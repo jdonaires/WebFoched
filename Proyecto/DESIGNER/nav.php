@@ -27,7 +27,7 @@
               
         if ($userTemp != null) {
           $DatosObtenidos;
-          $user->__SET('Usuario', 	$userTemp);
+          $user->__SET('Id_Usuario', 	$userTemp);
           $DatosObtenidos = $userDAO->Buscar($user);
           
           if ($DatosObtenidos["Rol"] == "Admin") {
@@ -36,7 +36,29 @@
         } else echo null;
         
       ?>
-        <li><a href="producto.php">Registrar Productos</a></li>
+
+      <?php
+        require_once('../BOL/Usuario.php');
+        require_once('../DAO/UsuarioDAO.php');
+
+        $user = new Usuario();
+        $userDAO = new UsuarioDAO();
+
+        $userTemp = "";
+        $userTemp = $objSe->get_Usuario();
+        
+              
+        if ($userTemp != null) {
+          $DatosObtenidos;
+          $user->__SET('Id_Usuario', 	$userTemp);
+          $DatosObtenidos = $userDAO->Buscar($user);
+          
+          if ($DatosObtenidos["Rol"] == "Admin") {
+            echo "<li><a href='producto.php'>Registrar Productos</a></li>";
+          }
+        } else echo null;
+        
+      ?>
         <li><a href="generic.php">Generic</a></li>
         <li><a href="contact.php">Contact</a></li>
         <li><a href="elements.php">Elements</a></li>

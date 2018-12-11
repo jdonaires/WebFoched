@@ -1,7 +1,20 @@
+
+<?php require ('InicioSesion.php'); ?>
+
 <?php
-
-
+    // Verificar Si Existe Una Sesión.
+    try {
+      if ($objSe->get_Usuario() == null) {
+            echo'	<script>;
+                    alertify.error("Debe Iniciar Session Primero.");
+                  </script>';
+            header('Location: frmIngresar.php');
+    }
+    } catch (Exception $e){
+      die($e->getMessage());
+    }
 ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
