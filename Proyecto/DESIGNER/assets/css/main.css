@@ -3908,3 +3908,13 @@ body.landing #main {
   width: 100%;
   height: 100%;
 }
+
+#main label {
+  color: black;
+}
+
+#direccion{
+  margin: auto;
+min-width: 300px;
+width: 75%;
+}

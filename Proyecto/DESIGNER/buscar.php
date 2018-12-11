@@ -39,7 +39,7 @@ $ubicacionDAO = new UbicacionDAO();
         <h2>Fooched</h2>
         <p>Encuentra el mejor establecimiento de comida al mejor precio</p>
         <p>Despliega la barra y selecciona al lugar donde quieres ir, para generar la ruta:</p>
-        <select class="txt" onchange="draw_rute(this.value)">
+        <select class="txt" onchange="draw_rute(this.value)" id="direccion">
       						<option value="0">Rutas &#8595;</option>
       						<?=$ubicacionDAO->GET_PUNTOS_VENTAS();?>
       					</select>
