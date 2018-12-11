@@ -30,33 +30,39 @@
       <!-- Main -->
       <section id="main" class="container">
         <section class="box special">
-
         <h2>Nosotros</h2>
-
         <div class="row">
-      <div class="col-md-6 col-md-pull-4 img-wrap animate-box" data-animate-effect="fadeInLeft">
+      <div class="col-6  col-12-narrower " data-animate-effect="fadeInLeft">
+        <section class="boxabout">
         <img src="IMG/slide_1.jpg" position: alt="Free Restaurant Bootstrap Website Template by FreeHTML5.co">
+      </section>
       </div>
-      <div class="col-5 col-md-push-1 animate-box">
-        <div class="section-heading">
+      <div class=" col-6 col-12-narrower">
+        <section class="boxabout">
+
           <h2>Mision</h2>
           <p>Foched es una empresa con profesionales dedicados a la innovación en el diseño de páginas Web.</p>
           <p>Foched se creó con el objetivo de ofrecer el crecimiento de los negocios aumentando las ventas de nuestros clientes, de la misma manera siendo reconocida a través de nuestra publicidad que brindamos.</p>
 
-        </div>
+      </section>
       </div>
     </div>
 
     <div class="row">
-  <div class="col-md-6 col-md-pull-4 img-wrap animate-box" data-animate-effect="fadeInLeft">
-    <img src="IMG/slide_1.jpg" position: alt="Free Restaurant Bootstrap Website Template by FreeHTML5.co">
+
+  <div class="col-6  col-12-narrower" data-animate-effect="fadeInLeft">
+    <section class="boxabout">
+    <img src="IMG/slide_7.jpg" position: alt="Free Restaurant Bootstrap Website Template by FreeHTML5.co">
+  </section >
   </div>
-  <div class="col-5 col-md-push-1 animate-box">
+  <div class="col-6 col-12-narrower">
+    <section class="boxabout ">
     <div class="section-heading">
       <h2>Vision</h2>
       <p>En futuro ser la mejor alternativa en Diseño Web para las empresas nacionales e internacionales, que buscan oportunidades que internet ofrece en donde seremos veedores del crecimiento económico de las empresas brindando la mejor calidad de nuestros servicios y ver reflejada así la prosperidad de nuestra empresa.</p>
 
     </div>
+  </section>
   </div>
   </div>
           </div>

@@ -3349,6 +3349,8 @@ body.landing #main {
 /* Wide */
 
 @media screen and (max-width: 1680px) {
+
+  }
   /* Basic */
 
   body,
@@ -3392,6 +3394,7 @@ body.landing #main {
   #banner h2 {
     font-size: 3.5em;
   }
+
 }
 
 /* Narrow */
@@ -3865,32 +3868,23 @@ body.landing #main {
   #banner {
     padding: 5em 3em 4em 3em;
   }
-
   /* Main */
-
   #main > .box:first-child {
     margin-top: 0;
   }
-
   /* CTA */
-
   #cta {
     padding: 2.5em 1em 3em 1em;
   }
 }
 
 .img-wrap img{
-  margin-bottom: 50px;
-  padding-top: 50px;
-  width: 500px;
+
+  width: 450px;
   height: 400px;
 }
-.section-heading {
-  width: 100%;
-  float: left;
-  margin-bottom: 50px;
-}
-.section-heading h1{
+/*NOSOTROS*/
+.boxabout h1{
   text-align: center;
   color: #646464;
   font-weight: 100;
@@ -3898,6 +3892,19 @@ body.landing #main {
 /*  margin: 0 0 0.5em 0;*/
 }
 
-.section-heading p{
+.boxabout p{
   text-align: justify;
+}
+
+.boxabout {
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 0 0 0 #e5e5e5;
+  margin: 0 0 2em 0;
+  padding: 0.1em;
+  width: 100%;
+}
+.boxabout img{
+  width: 100%;
+  height: 100%;
 }
