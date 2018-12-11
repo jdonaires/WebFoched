@@ -154,11 +154,11 @@ CREATE PROCEDURE sp_registrar_usuario(
 ,	_Rol 		VARCHAR(50)
 )
 	BEGIN
-	IF _Rol = 'Admin' THEN 
-		INSERT INTO Usuario (Usuario,Pass,Correo,Rol,Fecha_Creacion) 
+	IF _Rol = 'Admin' THEN
+		INSERT INTO Usuario (Usuario,Pass,Correo,Rol,Fecha_Creacion)
 		VALUES (_Usuario,SHA1(_Pass),_Correo,_Rol,NOW());
 	ELSE
-		INSERT INTO Usuario (Usuario,Pass,Correo,Fecha_Creacion) 
+		INSERT INTO Usuario (Usuario,Pass,Correo,Fecha_Creacion)
 		VALUES (_Usuario,SHA1(_Pass),_Correo,NOW());
 	END IF;
 	END$$
@@ -398,6 +398,19 @@ BEGIN
 	);
 END$$
 DELIMITER ;
+
+/*****************************************************
+Autor: Pachas Villa
+Descripción: Listar Puntos
+Fecha Actualizacion: 11/12/2018
+Ejecutar: CALL_SP_BUSCAR_RESTAURANTE()
+******************************************************/
+DELIMITER $$
+CREATE PROCEDURE CALL_SP_BUSCAR_RESTAURANTE(
+    )
+	BEGIN
+		SELECT Id_Restaurante,Razon_Social FROM RESTAURANTE WHERE RESTAURANTE.Estado = '1' ORDER BY RESTAURANTE.Razon_Social;
+	END$$
 
 
 
