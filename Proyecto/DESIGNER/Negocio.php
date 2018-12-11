@@ -8,7 +8,7 @@
             echo'	<script>;
                     alertify.error("Debe Iniciar Session Primero.");
                   </script>';
-            header ("Refresh:1; url=frmIngresar.php");
+            header('Location: frmIngresar.php');
     }
     } catch (Exception $e){
       die($e->getMessage());

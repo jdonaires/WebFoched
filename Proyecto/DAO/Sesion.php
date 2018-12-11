@@ -7,7 +7,7 @@ class Sesion
     function __CONSTRUCT()
     {
         session_start();
-        if(isset($_SESSION["Usuario"])) $this->username=$_SESSION["Usuario"];
+        if(isset($_SESSION["Id_Usuario"])) $this->username=$_SESSION["Id_Usuario"];
     }
 
     public function get_Usuario()
@@ -16,7 +16,7 @@ class Sesion
     }
     public function add_Usuario($user/* ,$pass,$recordar*/)
     {
-        $_SESSION["Usuario"]=$user;
+        $_SESSION["Id_Usuario"]=$user;
         $this->username = $user;
 
         /*

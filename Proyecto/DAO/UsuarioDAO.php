@@ -16,7 +16,7 @@ class UsuarioDAO
 		try
 		{
 		$statement = $this->pdo->prepare("CALL sp_registrar_usuario(?,?,?,?)");
-    	$statement->bindValue(1,$usuario->__GET('Usuario')		,PDO::PARAM_STR);
+    	$statement->bindValue(1,$usuario->__GET('Id_Usuario')		,PDO::PARAM_STR);
 		$statement->bindValue(2,$usuario->__GET('Pass')			,PDO::PARAM_STR);
 		$statement->bindValue(3,$usuario->__GET('Correo')		,PDO::PARAM_STR);
 		$statement->bindValue(4,$usuario->__GET('Rol')			,PDO::PARAM_STR);
@@ -33,12 +33,12 @@ class UsuarioDAO
 		}
 	}
 
-	public function Buscar(Usuario $usuario)
+	public function Buscar(Usuario $Id_Usuario)
 	{
 		try
 		{
 		$statement = $this->pdo->prepare("CALL sp_buscar_usuario(?)");
-    	$statement->bindValue(1,$usuario->__GET('Usuario')		,PDO::PARAM_STR);
+    	$statement->bindValue(1,$Id_Usuario->__GET('Id_Usuario')		,PDO::PARAM_STR);
 		$statement -> execute();
 		if ($statement != false){
 			return $statement->fetch(PDO::FETCH_ASSOC);

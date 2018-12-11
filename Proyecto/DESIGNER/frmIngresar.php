@@ -32,7 +32,7 @@
 						<legend class="legend">Ingresar</legend>
 						
 						<div class="input">
-							<input type="text" placeholder="Usuario" maxlength=20 name="Usuario" required ="" />
+							<input type="text" placeholder="DNI" maxlength=20 name="Id_Usuario" required ="" />
 						<span><i class="fa fa-user"></i></span>
 						</div>
 						
@@ -78,7 +78,7 @@ $userDAO = new UsuarioDAO();
 if(isset($_POST['LoginUsuario']))
 {
 	$DatosObtenidos;
-    $user->__SET('Usuario', $_POST["Usuario"]);
+    $user->__SET('Id_Usuario', $_POST["Id_Usuario"]);
 	$DatosObtenidos = $userDAO->Buscar($user);
 
 	if ($DatosObtenidos["Pass"] == sha1($_POST["Pass"])) {
@@ -91,7 +91,7 @@ if(isset($_POST['LoginUsuario']))
 		}
 		*/
 
-		$objSe->add_Usuario($DatosObtenidos["Usuario"]);
+		$objSe->add_Usuario($DatosObtenidos["Id_Usuario"]);
 		
 		echo'	<script>;
 					alertify.success("Ingresando...");

@@ -30,7 +30,7 @@
 						<legend class="legend">Registrarse</legend>
 						<div class="input">
 							<tr>
-							<input type="text" placeholder="Usuario" maxlength=20 name="Usuario" required ="" />
+							<input type="text" placeholder="DNI" maxlength=20 name="Id_Usuario" required ="" />
 							</tr>
 						<span><i class="fa fa-user"></i></span>
 						</div>
@@ -59,7 +59,7 @@
 								
 							if ($userTemp != null) {
 							$DatosObtenidos;
-							$user->__SET('Usuario', 	$userTemp);
+							$user->__SET('Id_Usuario', 	$userTemp);
 							$DatosObtenidos = $userDAO->Buscar($user);
 							
 							
@@ -113,7 +113,7 @@ if(isset($_POST['RegistrarUsuario']))
 {
 	try
 		{
-			$user->__SET('Usuario', 	$_POST["Usuario"]);
+			$user->__SET('Id_Usuario', 	$_POST["Id_Usuario"]);
 			$user->__SET('Pass', 		$_POST["Pass"]);
 			$user->__SET('Correo', 		$_POST["Correo"]);
 		
