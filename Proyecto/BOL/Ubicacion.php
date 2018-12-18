@@ -7,8 +7,8 @@ class Ubicacion
 	private $Direccion;
 	private $Referencia;
 	private $Estado;
-	private $Lat;
-	private $Lng;
+	private $lat;
+	private $lng;
 
 	public function __GET($x)
 	{

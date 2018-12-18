@@ -31,6 +31,18 @@
         <link rel="stylesheet" type="text/css" href="alertify/css/alertify.css">
         <link rel="stylesheet" type="text/css" href="alertify/css/themes/bootstrap.css">
 
+        <style>
+        .mapa-container #mapa {
+        color: #fff;
+        padding: 10px 20px;
+        margin-bottom: 0;
+        text-transform: uppercase;
+        width: 450px; 
+        height: 350px;
+      }
+
+        </style>
+
   </head>
   <body class="is-preload">
 		<div id="page-wrapper">
@@ -56,17 +68,25 @@
           <input placeholder="* Cargo" class="input_textual" maxlength=20 onkeypress="return validarSoloLetras(event)" name="Rol" value="" type="text" required="">
           <input placeholder="* Nombres" class="input_textual" maxlength=20 onkeypress="return validarSoloLetras(event)" name="Nombres" value="" type="text" required="">
           <input placeholder="* Apellidos" class="input_textual" maxlength=20 onkeypress="return validarSoloLetras(event)" name="Apellidos" value="" type="text" required="">
-          <input placeholder="* Número de celular" class="input_textual" onkeypress="return validarSoloNumeros(event)"  maxlength=20 name="Numero_1" value="" type="text" required="">
-          <input placeholder="Número de celular 2" class="input_textual" onkeypress="return validarSoloNumeros(event)" maxlength=20 name="Numero_2" value="" type="text" required>
-          <input placeholder="Número de celular 3" class="input_textual" onkeypress="return validarSoloNumeros(event)" maxlength=20 name="Numero_3" value="" type="text"required>
-          <input placeholder="Dirección De Red Social Del Contacto" class="input_textual" maxlength=11 name="Direccion_Red_Social_Contacto" value="" type="text" required="">
-          <input placeholder="* Nombre" class="input_textual" maxlength=20 name="Nombre" value="" type="text" required>
+          <input placeholder="* Número de celular" class="input_textual" onkeypress="return validarSoloNumeros(event)"  maxlength=9 name="Numero_1" value="" type="text" required ="">
+          <input placeholder="Número de celular 2" class="input_textual" onkeypress="return validarSoloNumeros(event)" maxlength=9 name="Numero_2" value="" type="text">
+          <input placeholder="Número de celular 3" class="input_textual" onkeypress="return validarSoloNumeros(event)" maxlength=9 name="Numero_3" value="" type="text">
+          <input placeholder="Dirección De Red Social Del Contacto" class="input_textual" maxlength=50 name="Direccion_Red_Social_Contacto" value="" type="text">
 
           <h3>Datos De Ubicacion</h1>
-          <input placeholder="* Nombre" class="input_textual" maxlength=20 name="Nombre" value="" type="text" required>
-          <input placeholder="* Dirección" class="input_textual" maxlength=20 name="Direccion" value="" type="text" required>
-          <input placeholder="Referencia" class="input_textual" maxlength=500 name="Referencia" value="" type="text" required>
+          <input placeholder="* Dirección" onfocusout="initMap()" class="input_textual" maxlength=30 name="Direccion" id="Direccion" value="" type="text" required>
+          <input placeholder="* Distrito" onfocusout="initMap()" class="input_textual" maxlength=20 name="Distrito" id="Distrito" value="" type="text" required>
+          <input placeholder="Referencia" class="input_textual" maxlength=500 name="Referencia" id="Referencia" value="" type="text">
+          <input placeholder="Latitud" class="input_textual" maxlength=50 name="lat" id="lat" value="" type="text" onkeypress="return validarSoloNumeros(event)" required>
+          <input placeholder="Longitud" class="input_textual" maxlength=50 name="lng" id="lng" value="" type="text" onkeypress="return validarSoloNumeros(event)" required>
 
+          <center>
+            <div class="mapa-container">
+              <div id="mapa">
+              </div>
+            </div>
+          </center>
+          
           <h3>Logo Del Negocio</h1>
           <div class="upload-image preview-img-upload">
             <div class="preview-img-holder">
@@ -96,6 +116,7 @@
         </form>
     </div>
 
+
   </body>
       <script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
@@ -107,6 +128,10 @@
       
       <script src="assets/js/funciones.js"></script>
       <script src="assets/js/Logo.js"></script>
+
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAS3k97NricSIayF4YDLkH_5yXUcYnrpU8&callback=initMap"></script>
+      <script src="assets/js/mapaRegistro.js"></script>
+
 </html>
 
 <?php
@@ -136,9 +161,11 @@ if(isset($_POST['Registrar_Negocio']))
     $contacto->__SET('Numero_3',  $_POST["Numero_3"]);
     $contacto->__SET('Direccion_Red_Social_Contacto',   $_POST["Direccion_Red_Social_Contacto"]);
 
-    $ubicacion->__SET('Nombre',           $_POST["Nombre"]);
-    $ubicacion->__SET('Direccion',        $_POST["Direccion"]);
-    $ubicacion->__SET('Referencia',       $_POST["Referencia"]);
+    $ubicacion->__SET('Direccion',     $_POST["Direccion"]);
+    $ubicacion->__SET('Distrito',     $_POST["Distrito"]);
+    $ubicacion->__SET('Referencia',    $_POST["Referencia"]);
+    $ubicacion->__SET('lat',        $_POST["lat"]);
+    $ubicacion->__SET('lng',      $_POST["lng"]);
 
     
     $validar = $negocio_dao->Registrar_Negocio($negocio,$contacto,$ubicacion);

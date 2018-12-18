@@ -15,7 +15,7 @@ class NegocioDAO
 	{
 		try
 		{
-		$statement = $this->pdo->prepare("CALL sp_registrar_restaurante_r_c_u(?,?,?,?,?,?,?,?,?,?,?,?,?)");
+		$statement = $this->pdo->prepare("CALL sp_registrar_restaurante_r_c_u(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
     	$statement->bindValue(1,$negocio->__GET('Razon_Social')			,PDO::PARAM_STR);
 		$statement->bindValue(2,$negocio->__GET('RUC_DNI')				,PDO::PARAM_INT);
 		$statement->bindValue(3,$negocio->__GET('Direccion_Red_Social')	,PDO::PARAM_STR);
@@ -28,9 +28,11 @@ class NegocioDAO
 		$statement->bindValue(9,$contacto->__GET('Numero_3')	,PDO::PARAM_INT);
 		$statement->bindValue(10,$contacto->__GET('Direccion_Red_Social_Contacto')	,PDO::PARAM_STR);
 
-		$statement->bindValue(11,$ubicacion->__GET('Nombre')		,PDO::PARAM_STR);
-		$statement->bindValue(12,$ubicacion->__GET('Direccion')		,PDO::PARAM_STR);
-		$statement->bindValue(13,$ubicacion->__GET('Referencia')	,PDO::PARAM_STR);
+		$statement->bindValue(11,$ubicacion->__GET('Direccion')		,PDO::PARAM_STR);
+		$statement->bindValue(12,$ubicacion->__GET('Referencia')	,PDO::PARAM_STR);
+		$statement->bindValue(13,$ubicacion->__GET('lat')			,PDO::PARAM_STR);	
+		$statement->bindValue(14,$ubicacion->__GET('lng')			,PDO::PARAM_STR);
+		$statement->bindValue(15,$ubicacion->__GET('Distrito')		,PDO::PARAM_STR);
 
 		$statement -> execute();
 

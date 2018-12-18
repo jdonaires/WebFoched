@@ -27,7 +27,7 @@
               
         if ($userTemp != null) {
           $DatosObtenidos;
-          $user->__SET('Id_Usuario', 	$userTemp);
+          $user->__SET('Nombre', 	$userTemp);
           $DatosObtenidos = $userDAO->Buscar($user);
           
           if ($DatosObtenidos["Rol"] == "Admin") {
@@ -50,7 +50,7 @@
               
         if ($userTemp != null) {
           $DatosObtenidos;
-          $user->__SET('Id_Usuario', 	$userTemp);
+          $user->__SET('Nombre', 	$userTemp);
           $DatosObtenidos = $userDAO->Buscar($user);
           
           if ($DatosObtenidos["Rol"] == "Admin") {
