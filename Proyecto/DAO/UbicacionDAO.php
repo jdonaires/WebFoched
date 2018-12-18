@@ -31,12 +31,14 @@ class UbicacionDAO
     public function GET_PUNTOS_VENTAS(){
       $statement = $this->pdo->prepare("CALL CALL_SP_BUSCAR_RESTAURANTE()");
       $statement -> execute();
-       $option = '';
+      $option = '';
+
        foreach ($statement as $key){
          $id = $key['Id_Restaurante'];
          $name = $key['Razon_Social'];
-         $option .= '<option value="'.$id.'">'.$name.' - B</option>';
+         $option .= '<option value="'.$id.'">'.$name.'</option>';
        }
+       
        return $option;
      }
 }

@@ -1,9 +1,13 @@
 let lugaresInfo = [];
 
 $("#mostrarEstablecimientos").click(function () {
+    lugaresInfo = [];
+    let _razon_social = ($("#direccion").val() != 0) ? $("#direccion option:selected").text():'' ;
+
     var data = {
-        Distrito: ""
+        razon_social: _razon_social        
     };
+
     $.ajax({
         url: "../HELPER/GeoUbicacion.php",
         data: { "GET_UBICACION_NEGOCIOS": JSON.stringify(data)},
@@ -11,6 +15,7 @@ $("#mostrarEstablecimientos").click(function () {
         async: true,
         datatype: "html",
         success: function (data) {
+
             $.each($.parseJSON(data), function (index, info) {
                 let lugarInfo = {
                     posicion: { lat: parseFloat(info.lat),
@@ -33,6 +38,7 @@ const GET_UbicacionUsuario = () =>
                 lat: usuarioUbicacion.coords.latitude,
                 lng: usuarioUbicacion.coords.longitude,
             }            
+
             DibujarMapa(ubicacion);
         });
     }
@@ -45,22 +51,32 @@ const DibujarMapa = (ubicacionUsuario) =>
         center: ubicacionUsuario,
         zoom: 14
     });
-console.log(ubicacionUsuario);
+
     let marcadorUsuario = new google.maps.Marker({
         position: ubicacionUsuario,
         title: 'Usted esta aquí'
     });
     
+
     marcadorUsuario.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png')
     marcadorUsuario.setMap(mapa);
-    console.log(lugaresInfo);
+    //console.log(lugaresInfo);
     let marcadores = lugaresInfo.map(lugar => {
+
         return new google.maps.Marker({
             position: lugar.posicion,
             title: lugar.nombre,
             map: mapa
-        });
+        });        
     });
+
+
+    let marcadoresEventos = marcadores.map(marcador =>{
+        marcador.addListener('click', function() {
+        mapa.setZoom(18);
+        mapa.setCenter(marcador.getPosition());
+    })});
+
 }
 
 

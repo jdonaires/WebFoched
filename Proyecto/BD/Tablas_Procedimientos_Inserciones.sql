@@ -22,56 +22,56 @@ USE `bd_webfoched`;
 DROP TABLE IF EXISTS `categoria`;
 
 CREATE TABLE `categoria` (
-  `Id_Categoria` INT(11) NOT NULL AUTO_INCREMENT,
-  `Nombre` VARCHAR(30) NOT NULL,
-  `Descripcion` VARCHAR(100) DEFAULT NULL,
-  `Estado` CHAR(1) NOT NULL DEFAULT '1',
+  `Id_Categoria` int(11) NOT NULL AUTO_INCREMENT,
+  `Nombre` varchar(30) NOT NULL,
+  `Descripcion` varchar(100) DEFAULT NULL,
+  `Estado` char(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`Id_Categoria`)
-) ENGINE=INNODB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 /*Data for the table `categoria` */
 
-INSERT  INTO `categoria`(`Id_Categoria`,`Nombre`,`Descripcion`,`Estado`) VALUES (1,'Pollería','Pollería','1'),(2,'Fusión','Fusión','1'),(3,'Parrillada','Parrillada','1'),(4,'Cafetería','Cafetería','1'),(5,'Casera','Casera','1'),(6,'Cebichería','Cebichería','1'),(7,'Chifa','Chifa','1'),(8,'Típicas','Típicas','1'),(9,'Variada','Variada','1'),(10,'Pizzería','Pizzería','1');
+insert  into `categoria`(`Id_Categoria`,`Nombre`,`Descripcion`,`Estado`) values (1,'Pollería','Pollería','1'),(2,'Fusión','Fusión','1'),(3,'Parrillada','Parrillada','1'),(4,'Cafetería','Cafetería','1'),(5,'Casera','Casera','1'),(6,'Cebichería','Cebichería','1'),(7,'Chifa','Chifa','1'),(8,'Típicas','Típicas','1'),(9,'Variada','Variada','1'),(10,'Pizzería','Pizzería','1');
 
 /*Table structure for table `contacto` */
 
 DROP TABLE IF EXISTS `contacto`;
 
 CREATE TABLE `contacto` (
-  `Id_Contacto` INT(11) NOT NULL AUTO_INCREMENT,
-  `Id_Restaurante` INT(11) NOT NULL,
-  `Rol` VARCHAR(25) DEFAULT NULL,
-  `Nombres` VARCHAR(100) NOT NULL,
-  `Apellidos` VARCHAR(100) NOT NULL,
-  `Numero_1` VARCHAR(11) NOT NULL,
-  `Numero_2` VARCHAR(11) DEFAULT NULL,
-  `Numero_3` VARCHAR(11) DEFAULT NULL,
-  `Direccion_Red_Social_Contacto` VARCHAR(200) DEFAULT NULL,
-  `Estado` CHAR(1) NOT NULL DEFAULT '1',
+  `Id_Contacto` int(11) NOT NULL AUTO_INCREMENT,
+  `Id_Restaurante` int(11) NOT NULL,
+  `Rol` varchar(25) DEFAULT NULL,
+  `Nombres` varchar(100) NOT NULL,
+  `Apellidos` varchar(100) NOT NULL,
+  `Numero_1` varchar(11) NOT NULL,
+  `Numero_2` varchar(11) DEFAULT NULL,
+  `Numero_3` varchar(11) DEFAULT NULL,
+  `Direccion_Red_Social_Contacto` varchar(200) DEFAULT NULL,
+  `Estado` char(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`Id_Contacto`),
   KEY `Id_Restaurante` (`Id_Restaurante`),
   CONSTRAINT `contacto_ibfk_1` FOREIGN KEY (`Id_Restaurante`) REFERENCES `restaurante` (`Id_Restaurante`)
-) ENGINE=INNODB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 /*Data for the table `contacto` */
 
-INSERT  INTO `contacto`(`Id_Contacto`,`Id_Restaurante`,`Rol`,`Nombres`,`Apellidos`,`Numero_1`,`Numero_2`,`Numero_3`,`Direccion_Red_Social_Contacto`,`Estado`) VALUES (1,1,'Administrador','Juan','Jaramillo Jimenez','956123456',NULL,NULL,NULL,'1'),(2,2,'Gerente','Fabian','Flores Franco','956456312',NULL,NULL,NULL,'1'),(3,3,'Gerente','María','Montero Matías','956987456',NULL,NULL,NULL,'1'),(4,4,'Administrador','Luis','Landero Lucana','956321654',NULL,NULL,NULL,'1'),(5,5,'Administrador','Nancy','Nuñez Navarro','956654987',NULL,NULL,NULL,'1');
+insert  into `contacto`(`Id_Contacto`,`Id_Restaurante`,`Rol`,`Nombres`,`Apellidos`,`Numero_1`,`Numero_2`,`Numero_3`,`Direccion_Red_Social_Contacto`,`Estado`) values (1,1,'Administrador','Juan','Jaramillo Jimenez','956123456',NULL,NULL,NULL,'1'),(2,2,'Gerente','Fabian','Flores Franco','956456312',NULL,NULL,NULL,'1'),(3,3,'Gerente','María','Montero Matías','956987456',NULL,NULL,NULL,'1'),(4,4,'Administrador','Luis','Landero Lucana','956321654',NULL,NULL,NULL,'1'),(5,5,'Administrador','Nancy','Nuñez Navarro','956654987',NULL,NULL,NULL,'1');
 
 /*Table structure for table `detalle_productos` */
 
 DROP TABLE IF EXISTS `detalle_productos`;
 
 CREATE TABLE `detalle_productos` (
-  `Id_Detalle` INT(11) NOT NULL AUTO_INCREMENT,
-  `Producto_Id` INT(11) DEFAULT NULL,
-  `Restaurante_Id` INT(11) DEFAULT NULL,
-  `Precio` DECIMAL(5,2) DEFAULT NULL,
+  `Id_Detalle` int(11) NOT NULL AUTO_INCREMENT,
+  `Producto_Id` int(11) DEFAULT NULL,
+  `Restaurante_Id` int(11) DEFAULT NULL,
+  `Precio` decimal(5,2) DEFAULT NULL,
   PRIMARY KEY (`Id_Detalle`),
   KEY `Producto_Id` (`Producto_Id`),
   KEY `Restaurante_Id` (`Restaurante_Id`),
   CONSTRAINT `detalle_productos_ibfk_1` FOREIGN KEY (`Producto_Id`) REFERENCES `producto` (`Id_Producto`),
   CONSTRAINT `detalle_productos_ibfk_2` FOREIGN KEY (`Restaurante_Id`) REFERENCES `restaurante` (`Id_Restaurante`)
-) ENGINE=INNODB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `detalle_productos` */
 
@@ -80,12 +80,12 @@ CREATE TABLE `detalle_productos` (
 DROP TABLE IF EXISTS `nivel_economico`;
 
 CREATE TABLE `nivel_economico` (
-  `Id_Nivel` INT(11) NOT NULL AUTO_INCREMENT,
-  `Nombre` VARCHAR(30) NOT NULL,
-  `Descripcion` VARCHAR(100) NOT NULL,
-  `Estado` CHAR(1) NOT NULL DEFAULT '1',
+  `Id_Nivel` int(11) NOT NULL AUTO_INCREMENT,
+  `Nombre` varchar(30) NOT NULL,
+  `Descripcion` varchar(100) NOT NULL,
+  `Estado` char(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`Id_Nivel`)
-) ENGINE=INNODB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `nivel_economico` */
 
@@ -94,12 +94,12 @@ CREATE TABLE `nivel_economico` (
 DROP TABLE IF EXISTS `producto`;
 
 CREATE TABLE `producto` (
-  `Id_Producto` INT(11) NOT NULL AUTO_INCREMENT,
-  `Nombre` VARCHAR(30) NOT NULL,
-  `Descripcion` VARCHAR(100) DEFAULT NULL,
-  `Estado` CHAR(1) NOT NULL DEFAULT '1',
+  `Id_Producto` int(11) NOT NULL AUTO_INCREMENT,
+  `Nombre` varchar(30) NOT NULL,
+  `Descripcion` varchar(100) DEFAULT NULL,
+  `Estado` char(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`Id_Producto`)
-) ENGINE=INNODB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `producto` */
 
@@ -108,54 +108,54 @@ CREATE TABLE `producto` (
 DROP TABLE IF EXISTS `restaurante`;
 
 CREATE TABLE `restaurante` (
-  `Id_Restaurante` INT(11) NOT NULL AUTO_INCREMENT,
-  `Razon_Social` VARCHAR(50) NOT NULL,
-  `RUC_DNI` VARCHAR(11) NOT NULL,
-  `Logo_Imagen` MEDIUMBLOB,
-  `Direccion_Red_Social` VARCHAR(200) DEFAULT NULL,
-  `Estado` CHAR(1) NOT NULL DEFAULT '1',
+  `Id_Restaurante` int(11) NOT NULL AUTO_INCREMENT,
+  `Razon_Social` varchar(50) NOT NULL,
+  `RUC_DNI` varchar(11) NOT NULL,
+  `Logo_Imagen` mediumblob,
+  `Direccion_Red_Social` varchar(200) DEFAULT NULL,
+  `Estado` char(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`Id_Restaurante`)
-) ENGINE=INNODB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 /*Data for the table `restaurante` */
 
-INSERT  INTO `restaurante`(`Id_Restaurante`,`Razon_Social`,`RUC_DNI`,`Logo_Imagen`,`Direccion_Red_Social`,`Estado`) VALUES (1,'Chifa Polleria Taypa','12345678',NULL,NULL,'1'),(2,'Markys Chincha','12345688',NULL,NULL,'1'),(3,'Pizzeria Don Giuseppi','12345677',NULL,NULL,'1'),(4,'Restaurante Princess','12345667',NULL,NULL,'1'),(5,'Cheng Ming','12345567',NULL,NULL,'1');
+insert  into `restaurante`(`Id_Restaurante`,`Razon_Social`,`RUC_DNI`,`Logo_Imagen`,`Direccion_Red_Social`,`Estado`) values (1,'Chifa Polleria Taypa','12345678',NULL,NULL,'1'),(2,'Markys Chincha','12345688',NULL,NULL,'1'),(3,'Pizzeria Don Giuseppi','12345677',NULL,NULL,'1'),(4,'Restaurante Princess','12345667',NULL,NULL,'1'),(5,'Cheng Ming','12345567',NULL,NULL,'1');
 
 /*Table structure for table `restaurante_categoria` */
 
 DROP TABLE IF EXISTS `restaurante_categoria`;
 
 CREATE TABLE `restaurante_categoria` (
-  `Id` INT(11) NOT NULL AUTO_INCREMENT,
-  `Id_Restaurante` INT(11) NOT NULL,
-  `Id_Categoria` INT(11) NOT NULL,
-  `Estado` CHAR(1) NOT NULL DEFAULT '1',
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Id_Restaurante` int(11) NOT NULL,
+  `Id_Categoria` int(11) NOT NULL,
+  `Estado` char(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`Id`),
   KEY `Id_Restaurante` (`Id_Restaurante`),
   KEY `Id_Categoria` (`Id_Categoria`),
   CONSTRAINT `restaurante_categoria_ibfk_1` FOREIGN KEY (`Id_Restaurante`) REFERENCES `restaurante` (`Id_Restaurante`),
   CONSTRAINT `restaurante_categoria_ibfk_2` FOREIGN KEY (`Id_Categoria`) REFERENCES `categoria` (`Id_Categoria`)
-) ENGINE=INNODB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 /*Data for the table `restaurante_categoria` */
 
-INSERT  INTO `restaurante_categoria`(`Id`,`Id_Restaurante`,`Id_Categoria`,`Estado`) VALUES (1,1,7,'1'),(2,2,1,'1'),(3,3,10,'1'),(4,4,9,'1'),(5,5,1,'1');
+insert  into `restaurante_categoria`(`Id`,`Id_Restaurante`,`Id_Categoria`,`Estado`) values (1,1,7,'1'),(2,2,1,'1'),(3,3,10,'1'),(4,4,9,'1'),(5,5,1,'1');
 
 /*Table structure for table `restaurante_nivel_economico` */
 
 DROP TABLE IF EXISTS `restaurante_nivel_economico`;
 
 CREATE TABLE `restaurante_nivel_economico` (
-  `Id` INT(11) NOT NULL AUTO_INCREMENT,
-  `Id_Restaurante` INT(11) NOT NULL,
-  `Id_Nivel` INT(11) NOT NULL,
-  `Estado` CHAR(1) NOT NULL DEFAULT '1',
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Id_Restaurante` int(11) NOT NULL,
+  `Id_Nivel` int(11) NOT NULL,
+  `Estado` char(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`Id`),
   KEY `Id_Restaurante` (`Id_Restaurante`),
   KEY `Id_Nivel` (`Id_Nivel`),
   CONSTRAINT `restaurante_nivel_economico_ibfk_1` FOREIGN KEY (`Id_Restaurante`) REFERENCES `restaurante` (`Id_Restaurante`),
   CONSTRAINT `restaurante_nivel_economico_ibfk_2` FOREIGN KEY (`Id_Nivel`) REFERENCES `nivel_economico` (`Id_Nivel`)
-) ENGINE=INNODB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `restaurante_nivel_economico` */
 
@@ -164,44 +164,54 @@ CREATE TABLE `restaurante_nivel_economico` (
 DROP TABLE IF EXISTS `ubicacion`;
 
 CREATE TABLE `ubicacion` (
-  `Id_Ubicacion` INT(11) NOT NULL AUTO_INCREMENT,
-  `Id_Restaurante` INT(11) NOT NULL,
-  `Direccion` VARCHAR(500) NOT NULL,
-  `Referencia` VARCHAR(500) DEFAULT NULL,
-  `Estado` CHAR(1) NOT NULL DEFAULT '1',
-  `lat` DOUBLE DEFAULT '0',
-  `lng` DOUBLE DEFAULT '0',
-  `Distrito` VARCHAR(100) DEFAULT 'Chincha Alta',
+  `Id_Ubicacion` int(11) NOT NULL AUTO_INCREMENT,
+  `Id_Restaurante` int(11) NOT NULL,
+  `Direccion` varchar(500) NOT NULL,
+  `Referencia` varchar(500) DEFAULT NULL,
+  `Estado` char(1) NOT NULL DEFAULT '1',
+  `lat` double DEFAULT '0',
+  `lng` double DEFAULT '0',
+  `Distrito` varchar(100) DEFAULT 'Chincha Alta',
   PRIMARY KEY (`Id_Ubicacion`),
   KEY `Id_Restaurante` (`Id_Restaurante`),
   CONSTRAINT `ubicacion_ibfk_1` FOREIGN KEY (`Id_Restaurante`) REFERENCES `restaurante` (`Id_Restaurante`)
-) ENGINE=INNODB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 /*Data for the table `ubicacion` */
 
-INSERT  INTO `ubicacion`(`Id_Ubicacion`,`Id_Restaurante`,`Direccion`,`Referencia`,`Estado`,`lat`,`lng`,`Distrito`) VALUES (1,1,'Plaza de Armas, Chincha Alta 11702','Cerca a la plaza de armas de Chincha Alta','1',-13.4171762,-76.132807,'Chincha Alta'),(2,2,'Plaza de Armas 480, 11702','Cerca a la plaza de armas de Chincha Alta','1',-13.4172349,-76.132406,'Chincha Alta'),(3,3,'Plaza de Armas 179, 11702','Cerca a la plaza de armas de Chincha Alta','1',-13.4180652,-76.132887,'Chincha Alta'),(4,4,'Calle Lima 109, 11702','Cerca a la plaza de armas de Chincha Alta','1',-13.4180447,-76.1331594,'Chincha Alta'),(5,5,'Av Oscar R. Benavides, 11702','Cerca a la plaza de armas de Chincha Alta','1',-13.4177553,-76.1334591,'Chincha Alta');
+insert  into `ubicacion`(`Id_Ubicacion`,`Id_Restaurante`,`Direccion`,`Referencia`,`Estado`,`lat`,`lng`,`Distrito`) values (1,1,'Plaza de Armas, Chincha Alta 11702','Cerca a la plaza de armas de Chincha Alta','1',-13.4171762,-76.132807,'Chincha Alta'),(2,2,'Plaza de Armas 480, 11702','Cerca a la plaza de armas de Chincha Alta','1',-13.4172349,-76.132406,'Chincha Alta'),(3,3,'Plaza de Armas 179, 11702','Cerca a la plaza de armas de Chincha Alta','1',-13.4180652,-76.132887,'Chincha Alta'),(4,4,'Calle Lima 109, 11702','Cerca a la plaza de armas de Chincha Alta','1',-13.4180447,-76.1331594,'Chincha Alta'),(5,5,'Av Oscar R. Benavides, 11702','Cerca a la plaza de armas de Chincha Alta','1',-13.4177553,-76.1334591,'Chincha Alta');
 
 /*Table structure for table `usuario` */
 
 DROP TABLE IF EXISTS `usuario`;
 
 CREATE TABLE `usuario` (
-  `Id_Usuario` INT(8) NOT NULL AUTO_INCREMENT,
-  `Pass` VARCHAR(200) NOT NULL,
-  `Correo` VARCHAR(50) NOT NULL,
-  `Rol` VARCHAR(20) DEFAULT 'Normal',
-  `Fecha_Creacion` DATETIME NOT NULL,
-  `Estado` CHAR(1) NOT NULL DEFAULT '1',
+  `Id_Usuario` int(8) NOT NULL AUTO_INCREMENT,
+  `Pass` varchar(200) NOT NULL,
+  `Correo` varchar(50) NOT NULL,
+  `Rol` varchar(20) DEFAULT 'Normal',
+  `Fecha_Creacion` datetime NOT NULL,
+  `Estado` char(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`Id_Usuario`),
   UNIQUE KEY `uni_correo` (`Correo`)
-) ENGINE=INNODB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=75813764 DEFAULT CHARSET=latin1;
 
 /*Data for the table `usuario` */
 
-INSERT  INTO `usuario`(`Id_Usuario`,`Pass`,`Correo`,`Rol`,`Fecha_Creacion`) 
-VALUES 	('75813761',SHA1('Admin'),'xxever28xx@gmail.com','Admin','2018-12-03 22:30:18'),
-	('75813762',SHA1('Normal'),'ever28@gmail.com','Normal','2018-12-03 22:30:18'),
-	('75813763',SHA1('Normal'),'admin@gmail.com','Normal','2018-12-03 22:37:28');
+insert  into `usuario`(`Id_Usuario`,`Pass`,`Correo`,`Rol`,`Fecha_Creacion`,`Estado`) values (75813761,'4e7afebcfbae000b22c7c85e5560f89a2a0280b4','xxever28xx@gmail.com','Admin','2018-12-03 22:30:18','1'),(75813762,'45e118d0563ea8581f830f46e85b60ae714faae4','ever28@gmail.com','Normal','2018-12-03 22:30:18','1'),(75813763,'45e118d0563ea8581f830f46e85b60ae714faae4','admin@gmail.com','Normal','2018-12-03 22:37:28','1');
+
+/* Procedure structure for procedure `CALL_SP_BUSCAR_RESTAURANTE` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `CALL_SP_BUSCAR_RESTAURANTE` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `CALL_SP_BUSCAR_RESTAURANTE`(
+    )
+BEGIN
+		SELECT Id_Restaurante,Razon_Social FROM RESTAURANTE WHERE RESTAURANTE.Estado = '1' ORDER BY RESTAURANTE.Razon_Social;
+eND */$$
+DELIMITER ;
 
 /* Procedure structure for procedure `sp_buscar_usuario` */
 
@@ -217,6 +227,31 @@ BEGIN
 	END */$$
 DELIMITER ;
 
+/* Procedure structure for procedure `SP_GET_INFORMACION_NEGOCIOS` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `SP_GET_INFORMACION_NEGOCIOS` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_GET_INFORMACION_NEGOCIOS`(
+	_razon_social VARCHAR(100)
+   )
+BEGIN
+SELECT	
+	rst.Razon_Social AS razon_social
+,	cat.Descripcion descripcion
+,	CONCAT(ubi.direccion,' en ',ubi.Distrito) direccion
+from
+	restaurante rst
+	INNER JOIN restaurante_categoria rstcat ON rst.Id_Restaurante = rstcat.Id_Restaurante	
+	INNER JOIN categoria cat ON cat.Id_Categoria = rstcat.Id_Categoria
+	INNER JOIN ubicacion ubi ON ubi.Id_Restaurante = rst.Id_Restaurante
+WHERE 
+	rst.Estado = 1;
+	
+END */$$
+DELIMITER ;
+
 /* Procedure structure for procedure `SP_GET_UBICACION_NEGOCIOS` */
 
 /*!50003 DROP PROCEDURE IF EXISTS  `SP_GET_UBICACION_NEGOCIOS` */;
@@ -224,10 +259,10 @@ DELIMITER ;
 DELIMITER $$
 
 /*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_GET_UBICACION_NEGOCIOS`(
-	_Distrito VARCHAR(100)
+	_razon_social VARCHAR(100)
     )
 BEGIN
-	IF (trim(_Distrito)) = ''
+	IF (trim(_razon_social)) = ''
 	then
 	
 		SELECT	rest.razon_social AS 'nombre'
@@ -242,7 +277,7 @@ BEGIN
 		,	ubi.lng
 		FROM	ubicacion AS ubi
 		INNER JOIN restaurante AS rest ON rest.id_restaurante = ubi.id_restaurante
-		WHERE 	ubi.Distrito = _Distrito
+		WHERE 	rest.razon_social = _razon_social
 		AND	rest.estado = '1';	
 	END IF;	
 	
@@ -468,7 +503,6 @@ BEGIN
 	END IF;
 	END */$$
 DELIMITER ;
-
 
 /* Procedure structure for procedure `sp_restaurante_categoria` */
 

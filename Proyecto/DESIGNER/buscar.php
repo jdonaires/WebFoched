@@ -15,7 +15,7 @@ $ubicacionDAO = new UbicacionDAO();
     content="width=device-width, initial-scale=1, user-scalable=no"
     />
     <link rel="stylesheet" href="assets/css/styleModal.css" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/main.css?v=2" />
     <link rel="stylesheet" href="assets/css/style.css" />
 
 
@@ -39,8 +39,9 @@ $ubicacionDAO = new UbicacionDAO();
         <h2>Fooched</h2>
         <p>Encuentra el mejor establecimiento de comida al mejor precio</p>
         <p>Despliega la barra y selecciona al lugar donde quieres ir, para generar la ruta:</p>
-        <select class="txt" onchange="draw_rute(this.value)" id="direccion">
-      						<option value="0">Rutas &#8595;</option>
+        <!-- <select class="txt" onchange="draw_rute(this.value)" id="direccion"> -->
+        <select class="txt" id="direccion" name="direccion">
+      						<option value="0">Mostrar todos los negocios<!-- Rutas  &#8595; --></option>
       						<?=$ubicacionDAO->GET_PUNTOS_VENTAS();?>
       					</select>
             <p>Presiona el boton para habilitar el mapa:</p>
@@ -49,10 +50,6 @@ $ubicacionDAO = new UbicacionDAO();
         </ul>
         <section id="map"></section>
       </section>
-
-
-
-      
 
       <section id="list-restaurant" class="box special list">
 
@@ -149,6 +146,6 @@ $ubicacionDAO = new UbicacionDAO();
       <script src="assets/js/breakpoints.min.js"></script>
       <script src="assets/js/util.js"></script>
       <script src="assets/js/main.js"></script>
-      <script src="assets/js/buscarMapModal.js?v=2"></script>
+      <script src="assets/js/buscarMapModal.js?v=5"></script>
     </body>
     </html>

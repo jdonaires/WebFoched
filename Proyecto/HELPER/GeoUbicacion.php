@@ -11,7 +11,7 @@ if(isset( $_POST['GET_UBICACION_NEGOCIOS'] ))
     $ubicacion = new Ubicacion();
     $ubicacionDAO = new UbicacionDAO();
 
-    $ubicacion->__SET('Distrito',$tempUbicacion->Distrito);
+    $ubicacion->__SET('Distrito',$tempUbicacion->razon_social);
 
     $result = $ubicacionDAO->GET_UBICACION_NEGOCIOS($ubicacion);
     
