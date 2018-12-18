@@ -23,8 +23,10 @@ $ubicacionDAO = new UbicacionDAO();
     <script src="alertify/alertify.js"></script>
     <link rel="stylesheet" type="text/css" href="alertify/css/alertify.css">
     <link rel="stylesheet" type="text/css" href="alertify/css/themes/bootstrap.css">
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRCleE2CV2kBgWDWmOMQMyvSHrXifc1WA"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAS3k97NricSIayF4YDLkH_5yXUcYnrpU8"></script>
 
+<!--     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRCleE2CV2kBgWDWmOMQMyvSHrXifc1WA"></script>
+-->
   </head>
   <body class="landing is-preload">
     <div id="page-wrapper">
