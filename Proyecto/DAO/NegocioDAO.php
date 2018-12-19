@@ -44,5 +44,22 @@ class NegocioDAO
 			die($e->getMessage());
 		}
 	}
+
+	public function GET_INFORMACION_NEGOCIO(Negocio $negocio)
+	{
+		try
+		{
+			$statement = $this->pdo->prepare("CALL SP_GET_INFORMACION_NEGOCIOS(?)");
+            $statement->bindValue(1,$negocio->__GET('Razon_Social'),PDO::PARAM_STR);
+            $statement -> execute();
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            return $result;
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
 }
 ?>

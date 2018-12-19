@@ -75,6 +75,25 @@ const DibujarMapa = (ubicacionUsuario) =>
         marcador.addListener('click', function() {
         mapa.setZoom(18);
         mapa.setCenter(marcador.getPosition());
+
+        let _razon_social = ($("#direccion").val() != 0) ? $("#direccion option:selected").text():'' ;
+
+    var data = {
+        razon_social: _razon_social        
+    };
+console.log(data);
+    $.ajax({
+        url: "mostrarNegocio.php",
+        data: { "GET_INFORMACION_NEGOCIOS": JSON.stringify(data)},
+        type: "POST",
+        async: true,
+        datatype: "html",
+        success: function (data) {
+           console.log(data);
+                }
+            });
+
+            location.href ='mostrarNegocio.php';
     })});
 
 }

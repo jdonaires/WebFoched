@@ -28,11 +28,33 @@ include_once "../DAO/NegocioDAO.php";
 
       </header>
 
-          <!-- Banner -->
-          <section id="banner">
-        <h2>Pizzeria Don Giuseppi</h2>
+      <body>
+<?php
 
-        <p><?php ?>ubicada en</p>
-      </section>
+$infoNegocio = '';
+    include_once "../BOL/Negocio.php";
+    include_once "../DAO/NegocioDAO.php";
+    if(isset( $_POST['GET_INFORMACION_NEGOCIOS'] ))
+    {
+
+        $tempNegocio= json_decode($_POST['GET_INFORMACION_NEGOCIOS']);
+
+        $negocio = new Negocio();
+        $negocioDAO = new NegocioDAO();
+
+        $negocio->__SET('Razon_Social',$tempNegocio->razon_social);
+
+        $infoNegocio = $negocioDAO->GET_INFORMACION_NEGOCIOS($negocio);    
+        echo(json_encode($infoNegocio));
+        
+    }
+    ?>
+          <!-- Banner -->
+          <section id='banner'>
+          <h2><?php$infoNegocio['razon_social']?></h2>
+      <!-- <script>console.log(<?php $infoNegocio['razon_social'] ?>);</script> -->
+          <p></p>
+      </section>    
+          
 </body>
 </html>

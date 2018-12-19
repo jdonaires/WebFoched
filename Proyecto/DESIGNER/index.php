@@ -31,7 +31,7 @@
         <h2>Fooched</h2>
         <p>Encuentra el mejor establecimiento de comida al mejor precio</p>
         <ul class="actions special">
-          <li><a href="#" class="button">Contactenos</a></li>
+          <!-- <li><a href="#" class="button">Contactenos</a></li> -->
         </ul>
       </section>
 

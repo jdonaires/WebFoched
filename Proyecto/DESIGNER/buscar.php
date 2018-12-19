@@ -48,7 +48,7 @@ $ubicacionDAO = new UbicacionDAO();
       					</select>
             <p>Presiona el boton para habilitar el mapa:</p>
         <ul class="actions special">
-          <li><button class="button" id="mostrarEstablecimientos">Ver el mapa de establecimientos en Chincha</button></li>
+          <li><button class="button" id="mostrarEstablecimientos">Ver en mapa</button></li>
         </ul>
         <section id="map"></section>
       </section>
@@ -148,6 +148,6 @@ $ubicacionDAO = new UbicacionDAO();
       <script src="assets/js/breakpoints.min.js"></script>
       <script src="assets/js/util.js"></script>
       <script src="assets/js/main.js"></script>
-      <script src="assets/js/buscarMapModal.js?v=5"></script>
+      <script src="assets/js/buscarMapModal.js?v=6"></script>
     </body>
     </html>

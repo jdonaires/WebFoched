@@ -77,8 +77,8 @@
           <input placeholder="* Dirección" onfocusout="initMap()" class="input_textual" maxlength=30 name="Direccion" id="Direccion" value="" type="text" required>
           <input placeholder="* Distrito" onfocusout="initMap()" class="input_textual" maxlength=20 name="Distrito" id="Distrito" value="" type="text" required>
           <input placeholder="Referencia" class="input_textual" maxlength=500 name="Referencia" id="Referencia" value="" type="text">
-          <input placeholder="Latitud" class="input_textual" maxlength=50 name="lat" id="lat" value="" type="text" onkeypress="return validarSoloNumeros(event)" required>
-          <input placeholder="Longitud" class="input_textual" maxlength=50 name="lng" id="lng" value="" type="text" onkeypress="return validarSoloNumeros(event)" required>
+          <input placeholder="Latitud" class="input_textual" maxlength=50 name="lat" id="lat" value="" type="text" onkeypress="return validarSoloNumeros(event)">
+          <input placeholder="Longitud" class="input_textual" maxlength=50 name="lng" id="lng" value="" type="text" onkeypress="return validarSoloNumeros(event)">
 
           <center>
             <div class="mapa-container">

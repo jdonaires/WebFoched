@@ -32,7 +32,7 @@ function initMap() {
 
     var markerPosition = center;
     var map = new google.maps.Map(document.getElementById('mapa'), {
-      zoom: 16,
+      zoom: 18,
       center: center,
       styles: []
     });
